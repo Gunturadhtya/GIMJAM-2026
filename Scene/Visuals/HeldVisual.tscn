@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d37vk4ylg16pb"]
+
+[ext_resource type="Script" uid="uid://bycj12jbmpgoh" path="res://Scripts/Visuals/HeldVisual.gd" id="1_jw33g"]
+
+[node name="HeldVisual" type="Node2D"]
+script = ExtResource("1_jw33g")
+
+[node name="VisualRoot" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="VisualRoot"]

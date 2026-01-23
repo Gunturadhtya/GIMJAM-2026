@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp3y6ykiubwmw"]
+
+[ext_resource type="Script" uid="uid://b81y68rsi4rp" path="res://Scripts/Visuals/GhostCursor.gd" id="1_t8xtv"]
+
+[node name="GhostCursor" type="Node2D"]
+z_index = 5
+script = ExtResource("1_t8xtv")

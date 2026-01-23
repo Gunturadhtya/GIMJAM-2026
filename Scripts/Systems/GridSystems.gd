@@ -31,11 +31,13 @@ func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]):
 	return true
 
 func place_item(origin: Vector2i, trash: TrashShape):
+	var i = 0
 	for offset in trash.offset:
 		var target = origin + offset
 		occupied_cell[target] = trash
-		tile_map.set_cell(target, 1, Vector2i(2,1)) # ubah kordinat atlas menjadi texture dari trash
+		tile_map.set_cell(target, 1, trash.atlas_coords[i]) # ubah kordinat atlas menjadi texture dari trash
 		astar.set_point_solid(target)
+		i += 1
 	
 	grid_updated.emit()
 	redraw_path()

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw2cwtcofrf78"]
+
+[ext_resource type="Script" uid="uid://cnospeuavvqcf" path="res://Scripts/UI/InventorySlot.gd" id="1_ce5md"]
+
+[node name="InventorySlot" type="TextureRect"]
+scale = Vector2(0.15, 0.15)
+mouse_default_cursor_shape = 6
+script = ExtResource("1_ce5md")

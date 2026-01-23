@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjlb10vbfmrui"]
+
+[ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ungln"]
+[ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="2_2e573"]
+[ext_resource type="Texture2D" uid="uid://bma67ef0smawm" path="res://icon.svg" id="3_s2bof"]
+[ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="4_ungln"]
+[ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="5_2e573"]
+[ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="5_6qa0l"]
+[ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="6_7bsvn"]
+[ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="7_nptyh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cpx0"]
+texture = ExtResource("3_s2bof")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5qdjt"]
+sources/1 = SubResource("TileSetAtlasSource_6cpx0")
+
+[node name="PrototypeScene" type="Node2D" node_paths=PackedStringArray("grid_system", "ghost_cursor", "state_machine", "tile_map", "held_visual", "inventory_bar") groups=["LevelManager"]]
+script = ExtResource("1_ungln")
+grid_system = NodePath("GridSystem")
+ghost_cursor = NodePath("GhostCursor")
+state_machine = NodePath("StateMachine")
+tile_map = NodePath("GridSystem/TileMapLayer")
+held_visual = NodePath("CanvasLayer/HeldVisual")
+inventory_bar = NodePath("CanvasLayer/InventoryBar")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
+script = ExtResource("2_2e573")
+tile_map = NodePath("TileMapLayer")
+path_line = NodePath("PathLine")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="GridSystem"]
+position = Vector2(160, 45)
+tile_set = SubResource("TileSet_5qdjt")
+
+[node name="PathLine" type="Line2D" parent="GridSystem"]
+position = Vector2(160, 45)
+width = 4.0
+
+[node name="GhostCursor" parent="." instance=ExtResource("4_ungln")]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_6qa0l")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("6_7bsvn")
+
+[node name="Dragging" type="Node" parent="StateMachine"]
+script = ExtResource("7_nptyh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeldVisual" parent="CanvasLayer" instance=ExtResource("5_2e573")]
+z_index = 20
+
+[node name="InventoryBar" type="HBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
