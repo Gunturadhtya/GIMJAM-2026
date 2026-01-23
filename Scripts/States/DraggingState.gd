@@ -21,9 +21,12 @@ func exit() -> void:
 func handle_input(_event: InputEvent) -> void:
 	if _event is InputEventMouseMotion:
 		var mouse_pos = level.get_global_mouse_position()
-		current_grid_pos = level.tile_map.local_to_map(mouse_pos)
 		
-		level.ghost_cursor.global_position = level.tile_map.map_to_local(current_grid_pos)
+		var local_mouse_pos = level.tile_map.to_local(mouse_pos)
+		current_grid_pos = level.tile_map.local_to_map(local_mouse_pos)
+			
+		var ghost_local_pos = level.tile_map.map_to_local(current_grid_pos)
+		level.ghost_cursor.global_position = level.tile_map.to_global(ghost_local_pos)
 		_validate_position()
 	
 	if _event.is_action_pressed("rotate_item"):

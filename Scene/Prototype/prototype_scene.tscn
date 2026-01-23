@@ -78,8 +78,12 @@ texture = ExtResource("3_o1kqw")
 [sub_resource type="TileSet" id="TileSet_5qdjt"]
 sources/1 = SubResource("TileSetAtlasSource_6cpx0")
 
-[node name="PrototypeScene" type="Node2D"]
+[node name="PrototypeScene" type="Node2D" node_paths=PackedStringArray("grid_system", "ghost_cursor", "state_machine", "tile_map")]
 script = ExtResource("1_a7p68")
+grid_system = NodePath("GridSystem")
+ghost_cursor = NodePath("GhostCursor")
+state_machine = NodePath("StateMachine")
+tile_map = NodePath("GridSystem/TileMapLayer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -93,9 +97,11 @@ tile_map = NodePath("TileMapLayer")
 path_line = NodePath("PathLine")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="GridSystem"]
+position = Vector2(160, 45)
 tile_set = SubResource("TileSet_5qdjt")
 
 [node name="PathLine" type="Line2D" parent="GridSystem"]
+position = Vector2(160, 45)
 width = 4.0
 
 [node name="GhostCursor" type="Node2D" parent="."]

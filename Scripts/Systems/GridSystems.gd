@@ -34,7 +34,7 @@ func place_item(origin: Vector2i, trash: TrashShape):
 	for offset in trash.offset:
 		var target = origin + offset
 		occupied_cell[target] = trash
-		tile_map.set_cell(target, 1, Vector2i(0,0)) # ubah kordinat atlas menjadi texture dari trash
+		tile_map.set_cell(target, 1, Vector2i(2,1)) # ubah kordinat atlas menjadi texture dari trash
 		astar.set_point_solid(target)
 	
 	grid_updated.emit()
