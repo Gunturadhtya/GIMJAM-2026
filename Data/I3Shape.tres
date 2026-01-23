@@ -6,5 +6,5 @@
 script = ExtResource("1_wdjwf")
 id = "i3"
 color = Color(7.21961e-07, 0.647161, 0.192445, 1)
-offset = Array[Vector2i]([Vector2i(0, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2)])
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"

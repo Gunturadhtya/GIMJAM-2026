@@ -6,7 +6,7 @@ class_name TrashShape extends Resource
 @export var offset: Array[Vector2i] = [Vector2i(0,0)]
 
 func rotate():
-	var new_offsets = []
+	var new_offsets: Array[Vector2i] = []
 	for points in offset:
 		new_offsets.append(Vector2i(-points.y, points.x))
 	offset = new_offsets
