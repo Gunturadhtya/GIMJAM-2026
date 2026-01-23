@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TrashShape" load_steps=2 format=3 uid="uid://c6lbp0hwlb4fu"]
+
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_wdjwf"]
+
+[resource]
+script = ExtResource("1_wdjwf")
+id = "i3"
+color = Color(7.21961e-07, 0.647161, 0.192445, 1)
+offset = Array[Vector2i]([Vector2i(0, 0)])
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
