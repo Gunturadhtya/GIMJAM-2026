@@ -39,7 +39,7 @@ func update(delta: float) -> void:
 	_process_sway_physics(delta)
 
 func handle_input(_event: InputEvent) -> void:
-	if _event is InputEventMouseMotion:
+	if _event is InputEventMouseMotion: # Read the Mouse Position and Translate it into Tile Coords 
 		var mouse_pos = level.get_global_mouse_position()
 		var local_mouse = level.tile_map.to_local(mouse_pos)
 		current_grid_pos = level.tile_map.local_to_map(local_mouse)
@@ -57,7 +57,7 @@ func handle_input(_event: InputEvent) -> void:
 			level.held_visual.visible = true
 			
 	
-	if _event.is_action_pressed("rotate_item"):
+	if _event.is_action_pressed("rotate_item"): # Rotate
 		current_trash.rotate()
 		
 		rotated = (rotated + 1) % 4
@@ -68,18 +68,17 @@ func handle_input(_event: InputEvent) -> void:
 		
 		get_viewport().set_input_as_handled()
 	
-	elif _event.is_action_pressed("place_item"):
-		if is_valid_drop:
-			level.grid_system.place_item(current_grid_pos, current_trash, rotated)
-			rotated = 0
-			finished.emit("Idle") 
-		else:
-			print("Position Invalid") 
+	elif _event.is_action_pressed("place_item") or _event is InputEventMouseButton: # Place
+		if _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
+			if is_valid_drop:
+				level.grid_system.place_item(current_grid_pos, current_trash, rotated)
+				rotated = 0
+				finished.emit("Idle") 
+			else:
+				_stop_dragging()
 	
-	elif _event.is_action_pressed("ui_cancel"):
-		level.add_item(current_trash)
-		rotated = 0
-		finished.emit("Idle") 
+	elif _event.is_action_pressed("ui_cancel"): # Cancel
+		_stop_dragging()
 
 func _update_ghost_visual():
 	level.ghost_cursor.update_visuals(current_trash.offset)
@@ -102,3 +101,8 @@ func _process_sway_physics(delta):
 	level.held_visual.rotation_degrees = target_visual_rotation + current_sway
 	
 	last_mouse_x = mouse_pos.x
+
+func _stop_dragging():
+	level.add_item(current_trash)
+	rotated = 0
+	finished.emit("Idle") 

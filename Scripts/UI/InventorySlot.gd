@@ -15,7 +15,7 @@ func _update_visuals():
 		texture = item_data.texture
 
 func _gui_input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		
 		if item_data == null:
 			return
