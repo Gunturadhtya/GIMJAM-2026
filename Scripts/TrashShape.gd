@@ -12,7 +12,6 @@ func rotate():
 		new_offsets.append(Vector2i(-points.y, points.x))
 	offset = new_offsets
 	rotated_degree = (rotated_degree + 90) % 360
-	print("Degree: ", rotated_degree)
 
 func get_copy() -> TrashShape:
 	var copy = self.duplicate(true)

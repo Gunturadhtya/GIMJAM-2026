@@ -37,17 +37,43 @@ func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]):
 		if target == start_pos or target == end_pos: return false
 	return true
 
-func place_item(origin: Vector2i, trash: TrashShape, rotated: int):
+func place_item(origin: Vector2i, trash: TrashShape):
 	var i = 0
 	for offset in trash.offset:
 		var target = origin + offset
 		occupied_cell[target] = trash
-		tile_map.set_cell(target, trash.atlas_id, trash.atlas_coords[i], TILE_ROTATIONS[rotated]) # ubah kordinat atlas menjadi texture dari trash
+		tile_map.set_cell(target, trash.atlas_id, trash.atlas_coords[i], TILE_ROTATIONS[(trash.rotated_degree/90)]) # ubah kordinat atlas menjadi texture dari trash
 		astar.set_point_solid(target)
 		i += 1
 	
 	grid_updated.emit()
 	redraw_path()
+
+func get_item(clicked_pos: Vector2i):
+	# Check if there is actually an item here
+	if not occupied_cell.has(clicked_pos):
+		return null
+
+	# Identify WHICH item we are picking up
+	var item_to_pickup: TrashShape = occupied_cell[clicked_pos]
+
+	# Find ALL grid cells occupied by this specific item instance
+	var cells_to_clear: Array[Vector2i] = []
+	
+	for cell in occupied_cell:
+		if occupied_cell[cell] == item_to_pickup:
+			cells_to_clear.append(cell)
+
+	# Clear them from the systems
+	for cell in cells_to_clear:
+		occupied_cell.erase(cell)          
+		tile_map.erase_cell(cell)          
+		astar.set_point_solid(cell, false) 
+
+	grid_updated.emit()
+	redraw_path()
+	
+	return item_to_pickup
 
 func redraw_path():
 	path_line.clear_points()

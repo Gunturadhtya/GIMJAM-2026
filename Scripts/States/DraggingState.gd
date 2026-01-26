@@ -7,7 +7,6 @@ const RECOVERY_SPEED = 8.0
 var current_trash: TrashShape
 var is_valid_drop: bool
 var current_grid_pos := Vector2i.ZERO
-var rotated := 0
 
 var last_mouse_x := 0.0
 var current_sway := 0.0
@@ -58,9 +57,6 @@ func handle_input(_event: InputEvent) -> void:
 	
 	if _event.is_action_pressed("rotate_item"): # Rotate
 		current_trash.rotate()
-		
-		rotated = (rotated + 1) % 4 # modus 4 bcus the item only have 4 rotated state 0, 90, 180 and 270
-		
 		target_visual_rotation += 90.0 
 		_update_ghost_visual()         
 		_validate_position()
@@ -71,8 +67,7 @@ func handle_input(_event: InputEvent) -> void:
 	elif _event.is_action_pressed("place_item") or _event is InputEventMouseButton: 
 		if _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
 			if is_valid_drop:
-				level.grid_system.place_item(current_grid_pos, current_trash, rotated)
-				rotated = 0
+				level.grid_system.place_item(current_grid_pos, current_trash)
 				finished.emit("Idle") 
 			else:
 				_stop_dragging()
@@ -104,5 +99,4 @@ func _process_sway_physics(delta): # this is the logic behind held item swaying
 
 func _stop_dragging():
 	level.add_item(current_trash)
-	rotated = 0
 	finished.emit("Idle") 
