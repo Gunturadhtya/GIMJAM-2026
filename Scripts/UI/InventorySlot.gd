@@ -8,6 +8,7 @@ func _ready():
 
 func setup(data: TrashShape):
 	item_data = data 
+	
 	_update_visuals()
 
 func _update_visuals():

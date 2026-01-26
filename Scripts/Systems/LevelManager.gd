@@ -12,7 +12,7 @@ const SLOT_SCENE = preload("res://Scene/UI/InventorySlot.tscn")
 func start_dragging_item(trash: TrashShape):
 	state_machine._transition_to_next_state("Dragging", {"trash" : trash})
 
-func add_random_item_to_inventory():
+func add_random_item_to_inventory(): # addd random item from /Data
 	var shape_data = GameData.get_random_shape()
 	
 	if shape_data:

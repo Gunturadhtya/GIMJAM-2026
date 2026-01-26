@@ -4,5 +4,5 @@
 
 [node name="InventorySlot" type="TextureRect"]
 mouse_default_cursor_shape = 6
-stretch_mode = 2
+stretch_mode = 3
 script = ExtResource("1_ce5md")

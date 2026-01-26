@@ -16,4 +16,5 @@ func rotate():
 func get_copy() -> TrashShape:
 	var copy = self.duplicate(true)
 	copy.offset = offset.duplicate()
+	copy.rotated_degree = rotated_degree
 	return copy

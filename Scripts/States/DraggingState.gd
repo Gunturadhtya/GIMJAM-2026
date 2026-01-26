@@ -10,7 +10,6 @@ var current_grid_pos := Vector2i.ZERO
 
 var last_mouse_x := 0.0
 var current_sway := 0.0
-var target_visual_rotation := 0.0 
 
 func enter(previous_state_path: String, data := {}) -> void:
 	if data.has("trash"):
@@ -23,7 +22,6 @@ func enter(previous_state_path: String, data := {}) -> void:
 	level.held_visual.setup(current_trash)
 	last_mouse_x = level.get_global_mouse_position().x
 	current_sway = 0.0
-	target_visual_rotation = 0.0
 	level.held_visual.rotation_degrees = 0.0
 	
 	print("State: Dragging")
@@ -57,7 +55,6 @@ func handle_input(_event: InputEvent) -> void:
 	
 	if _event.is_action_pressed("rotate_item"): # Rotate
 		current_trash.rotate()
-		target_visual_rotation += 90.0 
 		_update_ghost_visual()         
 		_validate_position()
 		
@@ -93,7 +90,7 @@ func _process_sway_physics(delta): # this is the logic behind held item swaying
 	
 	current_sway = lerp(current_sway, target_tilt, delta * RECOVERY_SPEED)
 	
-	level.held_visual.rotation_degrees = target_visual_rotation + current_sway
+	level.held_visual.rotation_degrees = current_trash.rotated_degree + current_sway
 	
 	last_mouse_x = mouse_pos.x
 
