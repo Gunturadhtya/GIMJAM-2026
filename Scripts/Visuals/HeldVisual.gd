@@ -6,6 +6,5 @@ extends Node2D
 func setup(data: TrashShape):
 	if data.texture:
 		sprite.texture = data.texture
-	sprite.modulate = data.color
 	
 	visual_root.position = Vector2.ZERO 

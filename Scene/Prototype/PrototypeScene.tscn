@@ -1,13 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjlb10vbfmrui"]
+[gd_scene load_steps=29 format=3 uid="uid://bjlb10vbfmrui"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ungln"]
 [ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="2_2e573"]
+[ext_resource type="Texture2D" uid="uid://b4r6hi3x7s5r6" path="res://Assets/junk_a_1.png" id="3_2l13d"]
 [ext_resource type="Texture2D" uid="uid://bma67ef0smawm" path="res://icon.svg" id="3_s2bof"]
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="4_ungln"]
 [ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="5_2e573"]
 [ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="5_6qa0l"]
+[ext_resource type="Texture2D" uid="uid://df74qp4dlvdk1" path="res://Assets/junk_a_2.png" id="5_q5y8r"]
 [ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="6_7bsvn"]
+[ext_resource type="Texture2D" uid="uid://canjs8mng3c61" path="res://Assets/junk_a_3.png" id="6_tm1s1"]
 [ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="7_nptyh"]
+[ext_resource type="Texture2D" uid="uid://d1vccitqrjee7" path="res://Assets/junk_b_1.png" id="7_ppxql"]
+[ext_resource type="Texture2D" uid="uid://bfq2y0hoydc3b" path="res://Assets/junk_b_2.png" id="8_tm6mi"]
+[ext_resource type="Texture2D" uid="uid://bhqo6fpnrrrbt" path="res://Assets/junk_c_1.png" id="9_2ryn7"]
+[ext_resource type="Texture2D" uid="uid://bsowv8pdgj1pq" path="res://Assets/junk_d_1.png" id="10_e5yfm"]
+[ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="11_7x8ju"]
+[ext_resource type="Texture2D" uid="uid://761phtho7mxl" path="res://Assets/junk_l_1.png" id="12_jhdha"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubdlt"]
+texture = ExtResource("3_2l13d")
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cpx0"]
 texture = ExtResource("3_s2bof")
@@ -76,8 +89,60 @@ texture = ExtResource("3_s2bof")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpvxc"]
+texture = ExtResource("5_q5y8r")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meslm"]
+texture = ExtResource("6_tm1s1")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pku2u"]
+texture = ExtResource("7_ppxql")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugoq3"]
+texture = ExtResource("8_tm6mi")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6d4sn"]
+texture = ExtResource("9_2ryn7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocago"]
+texture = ExtResource("10_e5yfm")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lagkr"]
+texture = ExtResource("11_7x8ju")
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35q1k"]
+texture = ExtResource("12_jhdha")
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_5qdjt"]
 sources/1 = SubResource("TileSetAtlasSource_6cpx0")
+sources/0 = SubResource("TileSetAtlasSource_ubdlt")
+sources/2 = SubResource("TileSetAtlasSource_wpvxc")
+sources/3 = SubResource("TileSetAtlasSource_meslm")
+sources/4 = SubResource("TileSetAtlasSource_pku2u")
+sources/5 = SubResource("TileSetAtlasSource_ugoq3")
+sources/6 = SubResource("TileSetAtlasSource_6d4sn")
+sources/7 = SubResource("TileSetAtlasSource_ocago")
+sources/8 = SubResource("TileSetAtlasSource_lagkr")
+sources/9 = SubResource("TileSetAtlasSource_35q1k")
 
 [node name="PrototypeScene" type="Node2D" node_paths=PackedStringArray("grid_system", "ghost_cursor", "state_machine", "tile_map", "held_visual", "inventory_bar") groups=["LevelManager"]]
 script = ExtResource("1_ungln")

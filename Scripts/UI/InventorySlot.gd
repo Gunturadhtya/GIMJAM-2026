@@ -13,7 +13,6 @@ func setup(data: TrashShape):
 func _update_visuals():
 	if item_data:
 		texture = item_data.texture
-		modulate = item_data.color
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

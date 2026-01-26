@@ -2,6 +2,13 @@ class_name GridSystem extends Node
 
 signal grid_updated
 
+const TILE_ROTATIONS = [
+	0,                                                                  # 0 degrees
+	TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_H, # 90 CW
+	TileSetAtlasSource.TRANSFORM_FLIP_H | TileSetAtlasSource.TRANSFORM_FLIP_V,     # 180 
+	TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_V  # 270 CW
+]
+
 @export var tile_map: TileMapLayer
 @export var path_line: Line2D
 @export var grid_size := Vector2i(16, 16)
@@ -30,18 +37,17 @@ func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]):
 		if target == start_pos or target == end_pos: return false
 	return true
 
-func place_item(origin: Vector2i, trash: TrashShape):
+func place_item(origin: Vector2i, trash: TrashShape, rotated: int):
 	var i = 0
 	for offset in trash.offset:
 		var target = origin + offset
 		occupied_cell[target] = trash
-		tile_map.set_cell(target, 1, trash.atlas_coords[i]) # ubah kordinat atlas menjadi texture dari trash
+		tile_map.set_cell(target, trash.atlas_id, trash.atlas_coords[i], TILE_ROTATIONS[rotated]) # ubah kordinat atlas menjadi texture dari trash
 		astar.set_point_solid(target)
 		i += 1
 	
 	grid_updated.emit()
 	redraw_path()
-	
 
 func redraw_path():
 	path_line.clear_points()

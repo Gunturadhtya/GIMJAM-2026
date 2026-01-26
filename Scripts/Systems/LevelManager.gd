@@ -17,9 +17,13 @@ func add_random_item_to_inventory():
 	
 	if shape_data:
 		var new_slot = SLOT_SCENE.instantiate()
-		new_slot.scale = Vector2(0.15, 0.15)
 		inventory_bar.add_child(new_slot)
 		
 		new_slot.setup(shape_data)
 			
-		print("Added item: ", shape_data.id)
+		print("Added item: ", shape_data.atlas_id)
+
+func add_item(shape_data: TrashShape):
+	var new_slot = SLOT_SCENE.instantiate()
+	inventory_bar.add_child(new_slot)
+	new_slot.setup(shape_data)

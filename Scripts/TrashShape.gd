@@ -1,8 +1,7 @@
 class_name TrashShape extends Resource
 
-@export var id: String = "base"
-@export var texture: Texture2D = null; # digunakan nanti setelah texture siap
-@export var color: Color = Color.WHITE
+@export var atlas_id: int = 0 # atlas_id
+@export var texture: Texture2D = null; # icon bar
 @export var atlas_coords: Array[Vector2i] = [Vector2i(0, 0)] # digunakan pada tile
 @export var offset: Array[Vector2i] = [Vector2i(0,0)]
 
@@ -13,6 +12,6 @@ func rotate():
 	offset = new_offsets
 
 func get_copy() -> TrashShape:
-	var copy = self.duplicate()
+	var copy = self.duplicate(true)
 	copy.offset = offset.duplicate()
 	return copy
