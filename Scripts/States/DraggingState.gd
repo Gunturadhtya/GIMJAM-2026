@@ -17,12 +17,11 @@ func enter(previous_state_path: String, data := {}) -> void:
 	if data.has("trash"):
 		current_trash = data["trash"]
 	
+	# initial setup
 	level.ghost_cursor.visible = false
 	_update_ghost_visual()
-	
 	level.held_visual.visible = true
 	level.held_visual.setup(current_trash)
-	
 	last_mouse_x = level.get_global_mouse_position().x
 	current_sway = 0.0
 	target_visual_rotation = 0.0
@@ -60,7 +59,7 @@ func handle_input(_event: InputEvent) -> void:
 	if _event.is_action_pressed("rotate_item"): # Rotate
 		current_trash.rotate()
 		
-		rotated = (rotated + 1) % 4
+		rotated = (rotated + 1) % 4 # modus 4 bcus the item only have 4 rotated state 0, 90, 180 and 270
 		
 		target_visual_rotation += 90.0 
 		_update_ghost_visual()         
@@ -68,7 +67,8 @@ func handle_input(_event: InputEvent) -> void:
 		
 		get_viewport().set_input_as_handled()
 	
-	elif _event.is_action_pressed("place_item") or _event is InputEventMouseButton: # Place
+	# if the button place item is pressed or if the mouse is released
+	elif _event.is_action_pressed("place_item") or _event is InputEventMouseButton: 
 		if _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed:
 			if is_valid_drop:
 				level.grid_system.place_item(current_grid_pos, current_trash, rotated)
@@ -81,13 +81,13 @@ func handle_input(_event: InputEvent) -> void:
 		_stop_dragging()
 
 func _update_ghost_visual():
-	level.ghost_cursor.update_visuals(current_trash.offset)
+	level.ghost_cursor.update_visuals(current_trash)
 
 func _validate_position():
 	is_valid_drop = level.grid_system.is_area_valid(current_grid_pos, current_trash.offset)
 	level.ghost_cursor.set_color_status(is_valid_drop)
 
-func _process_sway_physics(delta):
+func _process_sway_physics(delta): # this is the logic behind held item swaying
 	var mouse_pos = level.get_global_mouse_position()
 	
 	level.held_visual.global_position = mouse_pos
