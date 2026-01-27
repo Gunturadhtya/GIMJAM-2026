@@ -1,5 +1,7 @@
 extends PlayerState
 
+const DRAG_SMOOTHING = 25.0 # Higher = snappier, Lower = floatier 
+const ROTATION_SENSITIVITY = 0.8
 const SWAY_SPEED = 15.0
 const MAX_SWAY_ANGLE = 25.0
 const RECOVERY_SPEED = 8.0
@@ -47,7 +49,8 @@ func handle_input(_event: InputEvent) -> void:
 		
 		if is_valid_drop:
 			level.ghost_cursor.visible = true
-			level.held_visual.visible = false
+			level.held_visual.visible = true  
+			level.ghost_cursor.modulate.a = 0.5 
 		else:
 			level.ghost_cursor.visible = false
 			level.held_visual.visible = true
@@ -79,20 +82,28 @@ func _validate_position():
 	is_valid_drop = level.grid_system.is_area_valid(current_grid_pos, current_trash.offset)
 	level.ghost_cursor.set_color_status(is_valid_drop)
 
-func _process_sway_physics(delta): # this is the logic behind held item swaying
+func _process_sway_physics(delta): 
 	var mouse_pos = level.get_global_mouse_position()
 	
-	level.held_visual.global_position = mouse_pos
+	# POSITION LAG
+	var current_pos = level.held_visual.global_position
+	var new_pos = current_pos.lerp(mouse_pos, delta * DRAG_SMOOTHING)
+	level.held_visual.global_position = new_pos
 	
-	var velocity_x = mouse_pos.x - last_mouse_x
+	# CALCULATE VELOCITY DIFFERENCE
+	var diff_vector = mouse_pos - new_pos
 	
-	var target_tilt = clamp(-velocity_x * SWAY_SPEED * delta, -MAX_SWAY_ANGLE, MAX_SWAY_ANGLE)
+	# ROTATIONAL SWAY
+	var target_angle_offset = clamp(diff_vector.x * -ROTATION_SENSITIVITY, -MAX_SWAY_ANGLE, MAX_SWAY_ANGLE)
 	
-	current_sway = lerp(current_sway, target_tilt, delta * RECOVERY_SPEED)
+	# Smooth the rotation
+	current_sway = lerp(current_sway, target_angle_offset, delta * RECOVERY_SPEED)
 	
+	# Apply Base Rotation
 	level.held_visual.rotation_degrees = current_trash.rotated_degree + current_sway
 	
-	last_mouse_x = mouse_pos.x
+	# SEND JUICE DATA TO VISUAL
+	level.held_visual.apply_swaying_effect(diff_vector, delta)
 
 func _stop_dragging():
 	level.add_item(current_trash)
