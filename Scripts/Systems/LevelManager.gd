@@ -9,8 +9,8 @@ class_name LevelManager extends Node2D
 
 const SLOT_SCENE = preload("res://Scene/UI/InventorySlot.tscn")
 
-func start_dragging_item(trash: TrashShape):
-	state_machine._transition_to_next_state("Dragging", {"trash" : trash})
+func start_dragging_item(slot_node: PanelContainer):
+	state_machine._transition_to_next_state("Dragging", {"slot_node" : slot_node})
 
 func add_random_item_to_inventory(): # addd random item from /Data
 	var shape_data = GameData.get_random_shape()
@@ -23,7 +23,5 @@ func add_random_item_to_inventory(): # addd random item from /Data
 			
 		print("Added item: ", shape_data.atlas_id)
 
-func add_item(shape_data: TrashShape):
-	var new_slot = SLOT_SCENE.instantiate()
-	inventory_bar.add_child(new_slot)
-	new_slot.setup(shape_data)
+func add_item(item: Container):
+	inventory_bar.add_child(item)

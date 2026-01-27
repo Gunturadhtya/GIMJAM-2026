@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw2cwtcofrf78"]
+[gd_scene load_steps=3 format=3 uid="uid://dw2cwtcofrf78"]
 
 [ext_resource type="Script" uid="uid://cnospeuavvqcf" path="res://Scripts/UI/InventorySlot.gd" id="1_ce5md"]
 
-[node name="InventorySlot" type="TextureRect"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce5md"]
+
+[node name="InventorySlot" type="PanelContainer"]
 mouse_default_cursor_shape = 6
-stretch_mode = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ce5md")
 script = ExtResource("1_ce5md")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+stretch_mode = 2

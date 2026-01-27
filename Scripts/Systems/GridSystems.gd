@@ -16,8 +16,7 @@ const TILE_ROTATIONS = [
 @export var end_pos := Vector2i(7,5)
 
 var astar := AStarGrid2D.new()
-var occupied_cell = {} # {Vector2i : TrashShape}
-
+var occupied_cell = {} # {Vector2i : Container}
 
 func _ready() -> void:
 	_setup_astar()
@@ -38,11 +37,12 @@ func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]):
 		if target == start_pos or target == end_pos: return false
 	return true
 
-func place_item(origin: Vector2i, trash: TrashShape):
+func place_item(origin: Vector2i, slot_node: Container):
 	var i = 0
+	var trash = slot_node.item_data
 	for offset in trash.offset:
 		var target = origin + offset
-		occupied_cell[target] = trash
+		occupied_cell[target] = slot_node
 		tile_map.set_cell(target, trash.atlas_id, trash.atlas_coords[i], TILE_ROTATIONS[(trash.rotated_degree/90)]) # ubah kordinat atlas menjadi texture dari trash
 		astar.set_point_solid(target)
 		i += 1
@@ -56,7 +56,7 @@ func get_item(clicked_pos: Vector2i):
 		return null
 
 	# Identify WHICH item we are picking up
-	var item_to_pickup: TrashShape = occupied_cell[clicked_pos]
+	var item_to_pickup: Container = occupied_cell[clicked_pos]
 
 	# Find ALL grid cells occupied by this specific item instance
 	var cells_to_clear: Array[Vector2i] = []

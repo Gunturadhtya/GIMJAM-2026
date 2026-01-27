@@ -14,10 +14,10 @@ func handle_input(_event: InputEvent):
 		current_grid_pos = level.tile_map.local_to_map(local_mouse)
 	
 	if _event is InputEventMouseButton and _event.button_index == MOUSE_BUTTON_LEFT and _event.pressed:
-		var selected_trash = level.grid_system.get_item(current_grid_pos)
+		var selected_item = level.grid_system.get_item(current_grid_pos)
 		
-		if selected_trash != null:
-			finished.emit("Dragging", {"trash" : selected_trash})
+		if selected_item != null:
+			finished.emit("Dragging", {"slot_node" : selected_item})
 	
 	if _event.is_action_pressed("ui_accept"):
 		level.add_random_item_to_inventory()
