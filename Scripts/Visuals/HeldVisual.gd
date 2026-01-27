@@ -10,10 +10,11 @@ func setup(data: TrashShape):
 		shadow.texture = data.texture
 		shadow.modulate = Color(0, 0, 0, 0.4)
 		shadow.position = Vector2(8, 8)
-	
-	visual_root.position = Vector2.ZERO 
+
+	visual_root.position = Vector2.ZERO
 	visual_root.scale = Vector2.ONE
 	visual_root.skew = 0.0
+	
 
 # Call this from your Dragging State every frame
 func apply_swaying_effect(velocity_diff: Vector2, delta: float):

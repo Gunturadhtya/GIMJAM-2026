@@ -10,7 +10,6 @@ var current_trash: TrashShape
 var is_valid_drop: bool
 var current_grid_pos := Vector2i.ZERO
 
-var last_mouse_x := 0.0
 var current_sway := 0.0
 
 func enter(previous_state_path: String, data := {}) -> void:
@@ -22,7 +21,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	_update_ghost_visual()
 	level.held_visual.visible = true
 	level.held_visual.setup(current_trash)
-	last_mouse_x = level.get_global_mouse_position().x
+	level.held_visual.global_position = level.get_global_mouse_position()
 	current_sway = 0.0
 	level.held_visual.rotation_degrees = 0.0
 	

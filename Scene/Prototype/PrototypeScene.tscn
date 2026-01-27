@@ -165,11 +165,9 @@ tile_map = NodePath("TileMapLayer")
 path_line = NodePath("PathLine")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="GridSystem"]
-position = Vector2(160, 45)
 tile_set = SubResource("TileSet_5qdjt")
 
 [node name="PathLine" type="Line2D" parent="GridSystem"]
-position = Vector2(160, 45)
 width = 4.0
 
 [node name="GhostCursor" parent="." instance=ExtResource("4_ungln")]

@@ -11,12 +11,13 @@ const TILE_ROTATIONS = [
 
 @export var tile_map: TileMapLayer
 @export var path_line: Line2D
-@export var grid_size := Vector2i(16, 16)
+@export var grid_size := Vector2i(8, 6)
+@export var start_pos := Vector2i(1,1)
+@export var end_pos := Vector2i(7,5)
 
 var astar := AStarGrid2D.new()
 var occupied_cell = {} # {Vector2i : TrashShape}
-var start_pos := Vector2i(1,1)
-var end_pos := Vector2i(14,14)
+
 
 func _ready() -> void:
 	_setup_astar()
