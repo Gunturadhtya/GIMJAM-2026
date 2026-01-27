@@ -55,7 +55,6 @@ func handle_input(_event: InputEvent) -> void:
 		if is_valid_drop:
 			level.ghost_cursor.visible = true
 			level.held_visual.visible = true  
-			level.ghost_cursor.modulate.a = 0.5 
 		else:
 			level.ghost_cursor.visible = false
 			level.held_visual.visible = true
@@ -69,6 +68,7 @@ func handle_input(_event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	
 	elif _event.is_action_pressed("place_item") or (_event is InputEventMouseButton and _event.button_index == MOUSE_BUTTON_LEFT and not _event.pressed):
+		_validate_position()
 		if is_valid_drop:
 			level.grid_system.place_item(current_grid_pos, original_slot.duplicate())
 			if original_slot: original_slot.consume_item()
