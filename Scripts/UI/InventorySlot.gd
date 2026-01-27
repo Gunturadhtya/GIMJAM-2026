@@ -6,6 +6,8 @@ var icon: TextureRect
 func setup(data: TrashShape):
 	item_data = data
 	icon = TextureRect.new()
+	icon.expand_mode = icon.EXPAND_KEEP_SIZE
+	icon.stretch_mode = icon.STRETCH_KEEP_ASPECT_CENTERED
 	add_child(icon)
 	icon.texture = item_data.texture
 
