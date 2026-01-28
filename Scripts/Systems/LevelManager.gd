@@ -8,6 +8,8 @@ class_name LevelManager extends Node2D
 @export var stage_data: StageData
 	
 @onready var ui = $CanvasLayer/LevelUI 
+@onready var animation_player = $AnimationPlayer
+@onready var transition_overlay = $TransitionOverlay
 
 var current_trash_count: int = 0
 
@@ -19,6 +21,10 @@ func _ready() -> void:
 	current_trash_count = stage_data.trash_goal
 	
 	grid_system.grid_updated.connect(_on_path_changed)
+	
+	transition_overlay.visible = true
+	transition_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	animation_player.play("fade_in")
 
 func _on_path_changed():
 	_check_win_condition()

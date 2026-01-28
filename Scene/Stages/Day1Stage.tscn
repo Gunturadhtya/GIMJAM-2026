@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cya65lsp177sc"]
+[gd_scene load_steps=17 format=4 uid="uid://cya65lsp177sc"]
 
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
@@ -12,6 +12,60 @@
 [ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="5_kitjk"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_micd6"]
 [ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="13_t0qmm"]
+
+[sub_resource type="Animation" id="Animation_mhu6m"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e7jyp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qaxhb"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u8anr"]
+_data = {
+&"RESET": SubResource("Animation_e7jyp"),
+&"fade_in": SubResource("Animation_mhu6m"),
+&"fade_out": SubResource("Animation_qaxhb")
+}
 
 [node name="Day1Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
 script = ExtResource("1_tphfx")
@@ -83,3 +137,18 @@ offset_bottom = 48.0
 theme_override_fonts/normal_font = ExtResource("12_micd6")
 bbcode_enabled = true
 fit_content = true
+
+[node name="TransitionOverlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u8anr")
+}
