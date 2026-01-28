@@ -81,6 +81,7 @@ func reconstruct_grid_visuals() -> void:
 		for _step in range(rot_steps):
 			trash.rotate()
 		
+		trash.last_rotated_degree = trash.get_rotation()
 		# Draw & Fill Dictionary
 		var i = 0
 		
@@ -94,7 +95,7 @@ func reconstruct_grid_visuals() -> void:
 			tile_map.set_cell(target, trash.atlas_id, trash.atlas_coords[i], TILE_ROTATIONS[rot_steps])
 			astar.set_point_solid(target)
 			i += 1
-			
+		
 	redraw_path()
 
 func place_item(origin: Vector2i, trash: TrashShape) -> void:

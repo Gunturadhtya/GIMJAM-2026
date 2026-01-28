@@ -6,6 +6,7 @@ class_name TrashShape extends Resource
 @export var offset: Array[Vector2i] = [Vector2i(0,0)]
 @export var _rotated_degree: int = 0
 @export var _last_origin: Vector2i = Vector2.ZERO
+@export var last_rotated_degree: int = 0
 
 func rotate():
 	var new_offsets: Array[Vector2i] = []

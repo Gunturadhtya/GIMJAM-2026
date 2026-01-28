@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="TrashShape" load_steps=3 format=3 uid="uid://c53laitbm51gj"]
 
 [ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_4qnhr"]
-[ext_resource type="Texture2D" uid="uid://761phtho7mxl" path="res://Assets/junk_l_1.png" id="2_rf5cv"]
+[ext_resource type="Texture2D" uid="uid://b8w07nyixu4gb" path="res://Assets/placeholder001.png" id="2_s8ggo"]
 
 [resource]
 script = ExtResource("1_4qnhr")
-atlas_id = 9
-texture = ExtResource("2_rf5cv")
-atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
-offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+atlas_id = 10
+texture = ExtResource("2_s8ggo")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1)])
+_rotated_degree = 0
+_last_origin = Vector2i(0, 0)
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"

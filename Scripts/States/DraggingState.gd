@@ -20,7 +20,7 @@ func enter(_previous_state_path: String, data := {}) -> void:
 	if data.has("trash"):
 		current_trash = data["trash"]
 	
-	ghost_cursor.visible = false
+	ghost_cursor.visible = true
 	_update_ghost_visual()
 	
 	held_visual.visible = true
@@ -67,12 +67,11 @@ func _update_mouse_position():
 	ghost_cursor.global_position = level.grid_system.tile_map.to_global(ghost_local)
 	
 	_validate_position()
-	
-	ghost_cursor.visible = is_valid_drop
 
 func _attempt_place_item():
 	_validate_position()
 	if is_valid_drop:
+		current_trash.last_rotated_degree = current_trash.get_rotation()
 		level.grid_system.place_item(current_grid_pos, current_trash)
 		level.current_trash_count += 1
 		finished.emit("Idle") 
@@ -80,6 +79,14 @@ func _attempt_place_item():
 		_stop_dragging()
 
 func _stop_dragging():
+	var rot_idx = (abs(current_trash.get_rotation() - (360 + current_trash.last_rotated_degree))) / 90
+	
+	for rot in range(rot_idx):
+		print("rotate")
+		current_trash.rotate()
+	
+	current_trash.last_rotated_degree = current_trash.get_rotation()
+	
 	level.grid_system.place_item(current_trash.get_last_origin(), current_trash)
 	level.current_trash_count += 1
 	finished.emit("Idle")

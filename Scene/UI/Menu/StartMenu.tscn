@@ -184,6 +184,21 @@ cache/0/25/0/glyphs/69/texture_idx = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7jyp"]
 
+[sub_resource type="Animation" id="Animation_e7jyp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_mhu6m"]
 resource_name = "fade_in"
 length = 0.5
@@ -198,21 +213,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_e7jyp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_qaxhb"]
@@ -245,11 +245,13 @@ script = ExtResource("1_e7jyp")
 start_scene_path = "uid://cya65lsp177sc"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.0901961, 0.0666667, 0.101961, 1)
 
 [node name="Content" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 167.0
 offset_bottom = 189.0
 theme_override_constants/margin_left = 24

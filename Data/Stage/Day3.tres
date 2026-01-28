@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=16 format=3 uid="uid://c1uy6hbp3wmgj"]
+
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_m04jl"]
+[ext_resource type="Texture2D" uid="uid://bsowv8pdgj1pq" path="res://Assets/junk_d_1.png" id="2_jorgt"]
+[ext_resource type="Texture2D" uid="uid://b8w07nyixu4gb" path="res://Assets/placeholder001.png" id="3_oomf6"]
+[ext_resource type="Texture2D" uid="uid://d1vccitqrjee7" path="res://Assets/junk_b_1.png" id="4_o8xbd"]
+[ext_resource type="Texture2D" uid="uid://b4r6hi3x7s5r6" path="res://Assets/junk_a_1.png" id="5_uw2p2"]
+[ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="6_n50as"]
+[ext_resource type="Script" uid="uid://byo78viqn3s5q" path="res://Scripts/StageData.gd" id="7_whqvw"]
+
+[sub_resource type="Resource" id="Resource_jorgt"]
+script = ExtResource("1_m04jl")
+atlas_id = 4
+texture = ExtResource("4_o8xbd")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
+_rotated_degree = 0
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_m04jl"]
+script = ExtResource("1_m04jl")
+atlas_id = 10
+texture = ExtResource("3_oomf6")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1)])
+_rotated_degree = 0
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_30l8m"]
+script = ExtResource("1_m04jl")
+atlas_id = 4
+texture = ExtResource("4_o8xbd")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
+_rotated_degree = 90
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_w65np"]
+script = ExtResource("1_m04jl")
+atlas_id = 0
+texture = ExtResource("5_uw2p2")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0)])
+_rotated_degree = 0
+_last_origin = Vector2i(1, 1)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_oomf6"]
+script = ExtResource("1_m04jl")
+atlas_id = 8
+texture = ExtResource("6_n50as")
+atlas_coords = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(-1, 1)])
+_rotated_degree = 270
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_igjub"]
+script = ExtResource("1_m04jl")
+atlas_id = 0
+texture = ExtResource("5_uw2p2")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0)])
+_rotated_degree = 0
+_last_origin = Vector2i(1, 1)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_o8xbd"]
+script = ExtResource("1_m04jl")
+atlas_id = 7
+texture = ExtResource("2_jorgt")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)])
+_rotated_degree = 0
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[sub_resource type="Resource" id="Resource_uw2p2"]
+script = ExtResource("1_m04jl")
+atlas_id = 8
+texture = ExtResource("6_n50as")
+atlas_coords = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(-1, 1)])
+_rotated_degree = 90
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[resource]
+script = ExtResource("7_whqvw")
+title = "[u]The Desk[/u]"
+day = 3
+description = "He's coughing. Hopefully he's fine. "
+goal = "Clear a path to the glass of water on the desk."
+trash_goal = 1
+grid_content = Dictionary[Vector2i, ExtResource("1_m04jl")]({
+Vector2i(0, 5): SubResource("Resource_jorgt"),
+Vector2i(1, 3): SubResource("Resource_m04jl"),
+Vector2i(3, 1): SubResource("Resource_30l8m"),
+Vector2i(3, 4): SubResource("Resource_w65np"),
+Vector2i(5, 1): SubResource("Resource_oomf6"),
+Vector2i(5, 2): SubResource("Resource_igjub"),
+Vector2i(6, 3): SubResource("Resource_o8xbd"),
+Vector2i(6, 5): SubResource("Resource_uw2p2")
+})
+metadata/_custom_type_script = "uid://byo78viqn3s5q"

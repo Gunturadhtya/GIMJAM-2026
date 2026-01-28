@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="StageData" load_steps=15 format=3 uid="uid://q50arvmrv1tg"]
+[gd_resource type="Resource" script_class="StageData" load_steps=15 format=3 uid="uid://c34wdo7mibup8"]
 
-[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_yh488"]
-[ext_resource type="Texture2D" uid="uid://bsowv8pdgj1pq" path="res://Assets/junk_d_1.png" id="2_161wi"]
-[ext_resource type="Texture2D" uid="uid://bhqo6fpnrrrbt" path="res://Assets/junk_c_1.png" id="3_ba8tv"]
-[ext_resource type="Script" uid="uid://byo78viqn3s5q" path="res://Scripts/StageData.gd" id="3_nomhw"]
-[ext_resource type="Texture2D" uid="uid://d1vccitqrjee7" path="res://Assets/junk_b_1.png" id="4_ba8tv"]
-[ext_resource type="Texture2D" uid="uid://b4r6hi3x7s5r6" path="res://Assets/junk_a_1.png" id="5_sulbo"]
-[ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="6_sulbo"]
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_8a8ii"]
+[ext_resource type="Texture2D" uid="uid://b4r6hi3x7s5r6" path="res://Assets/junk_a_1.png" id="2_77nyi"]
+[ext_resource type="Texture2D" uid="uid://d1vccitqrjee7" path="res://Assets/junk_b_1.png" id="3_2ih5y"]
+[ext_resource type="Texture2D" uid="uid://bsowv8pdgj1pq" path="res://Assets/junk_d_1.png" id="4_njcst"]
+[ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="5_d0ffr"]
+[ext_resource type="Texture2D" uid="uid://bhqo6fpnrrrbt" path="res://Assets/junk_c_1.png" id="6_gxycq"]
+[ext_resource type="Script" uid="uid://byo78viqn3s5q" path="res://Scripts/StageData.gd" id="7_oo3ke"]
 
 [sub_resource type="Resource" id="Resource_ds65q"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 0
-texture = ExtResource("5_sulbo")
+texture = ExtResource("2_77nyi")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0)])
 _rotated_degree = 0
@@ -20,9 +20,9 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [sub_resource type="Resource" id="Resource_ba8tv"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 4
-texture = ExtResource("4_ba8tv")
+texture = ExtResource("3_2ih5y")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 _rotated_degree = 0
@@ -31,9 +31,9 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [sub_resource type="Resource" id="Resource_c3b63"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 0
-texture = ExtResource("5_sulbo")
+texture = ExtResource("2_77nyi")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0)])
 _rotated_degree = 0
@@ -42,9 +42,9 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [sub_resource type="Resource" id="Resource_sulbo"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 7
-texture = ExtResource("2_161wi")
+texture = ExtResource("4_njcst")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)])
 _rotated_degree = 0
@@ -53,9 +53,9 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [sub_resource type="Resource" id="Resource_3sd7v"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 8
-texture = ExtResource("6_sulbo")
+texture = ExtResource("5_d0ffr")
 atlas_coords = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
 offset = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
 _rotated_degree = 0
@@ -64,9 +64,9 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [sub_resource type="Resource" id="Resource_jwm0n"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 4
-texture = ExtResource("4_ba8tv")
+texture = ExtResource("3_2ih5y")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 _rotated_degree = 90
@@ -75,9 +75,9 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [sub_resource type="Resource" id="Resource_wfc70"]
-script = ExtResource("1_yh488")
+script = ExtResource("1_8a8ii")
 atlas_id = 6
-texture = ExtResource("3_ba8tv")
+texture = ExtResource("6_gxycq")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 _rotated_degree = 90
@@ -86,13 +86,13 @@ last_rotated_degree = 0
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [resource]
-script = ExtResource("3_nomhw")
-title = "[u]The Notice[/u]"
-day = 2
-description = "A white paper slid under the door. it could be an eviction notice."
-goal = "Clear a path to the paper slipped under the door."
-trash_goal = 7
-grid_content = Dictionary[Vector2i, ExtResource("1_yh488")]({
+script = ExtResource("7_oo3ke")
+title = "[u]The Wardrobe[/u]"
+day = 4
+description = "He has been wearing the same shirt for a while."
+goal = "Clear a path to the cupboard."
+trash_goal = 1
+grid_content = Dictionary[Vector2i, ExtResource("1_8a8ii")]({
 Vector2i(0, 4): SubResource("Resource_ds65q"),
 Vector2i(1, 3): SubResource("Resource_ba8tv"),
 Vector2i(2, 5): SubResource("Resource_c3b63"),

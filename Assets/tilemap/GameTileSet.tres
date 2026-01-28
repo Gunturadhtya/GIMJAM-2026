@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://cj36eij5p3d7n"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://cj36eij5p3d7n"]
 
 [ext_resource type="Texture2D" uid="uid://b4r6hi3x7s5r6" path="res://Assets/junk_a_1.png" id="1_6h6ft"]
 [ext_resource type="Texture2D" uid="uid://bma67ef0smawm" path="res://icon.svg" id="2_0dvnu"]
+[ext_resource type="Texture2D" uid="uid://b8w07nyixu4gb" path="res://Assets/placeholder001.png" id="3_0dvnu"]
 [ext_resource type="Texture2D" uid="uid://df74qp4dlvdk1" path="res://Assets/junk_a_2.png" id="3_c3bm2"]
 [ext_resource type="Texture2D" uid="uid://canjs8mng3c61" path="res://Assets/junk_a_3.png" id="4_0j7t2"]
 [ext_resource type="Texture2D" uid="uid://d1vccitqrjee7" path="res://Assets/junk_b_1.png" id="5_we14a"]
@@ -82,6 +83,13 @@ texture = ExtResource("2_0dvnu")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3bm2"]
+texture = ExtResource("3_0dvnu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpvxc"]
 texture = ExtResource("3_c3bm2")
 0:0/0 = 0
@@ -136,3 +144,4 @@ sources/6 = SubResource("TileSetAtlasSource_6d4sn")
 sources/7 = SubResource("TileSetAtlasSource_ocago")
 sources/8 = SubResource("TileSetAtlasSource_lagkr")
 sources/9 = SubResource("TileSetAtlasSource_35q1k")
+sources/10 = SubResource("TileSetAtlasSource_c3bm2")
