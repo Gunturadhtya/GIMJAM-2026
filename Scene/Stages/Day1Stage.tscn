@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=4 uid="uid://cya65lsp177sc"]
+
+[ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
+[ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
+[ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="1_yci7k"]
+[ext_resource type="TileSet" uid="uid://c2b85kq11pwdo" path="res://Assets/tilemap/BackgroundTileset.tres" id="2_jg6dk"]
+[ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="2_yci7k"]
+[ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="3_dbd7c"]
+[ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="3_kitjk"]
+[ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="4_tphfx"]
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="4_u0lrj"]
+[ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="5_1biqa"]
+[ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="5_kitjk"]
+[ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_micd6"]
+
+[sub_resource type="Resource" id="Resource_1biqa"]
+script = ExtResource("4_u0lrj")
+atlas_id = 8
+texture = ExtResource("5_1biqa")
+atlas_coords = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
+offset = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
+_rotated_degree = 90
+_last_origin = Vector2i(0, 0)
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
+[node name="Day1Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "ghost_cursor", "state_machine", "tile_map", "held_visual", "map_position") groups=["LevelManager"]]
+script = ExtResource("1_tphfx")
+grid_system = NodePath("GridSystem")
+ghost_cursor = NodePath("GhostCursor")
+state_machine = NodePath("StateMachine")
+tile_map = NodePath("GridSystem/GridTile")
+held_visual = NodePath("CanvasLayer/HeldVisual")
+map_position = NodePath("MapPosition")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAIAAAAAAAAAAQAAAAAAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAADAAIAAQABAAEAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAABAAIAAQABAAEAAAABAAMAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAACAAMAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAFAAMAAQABAAEAAAAGAAIAAQABAAEAAAAFAAIAAQABAAEAAAAEAAIAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAAHAAEAAQACAAEAAAAHAAIAAQACAAEAAAAHAAMAAQACAAEAAAAHAAQAAQACAAEAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQACAAIAAAAHAAAAAQACAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAA=")
+tile_set = ExtResource("2_jg6dk")
+
+[node name="Wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAADAAMAAAD//wMAAAAAAAEAAAD//wQAAAADAAEAAAD//wUAAAAAAAEAAAAIAAAAAAACAAEAAAAIAAEAAAACAAEAAAAIAAIAAAAFAAEAAAAIAAMAAAACAAEAAAAIAAQAAAAEAAEAAAAIAAUAAAACAAEAAAAAAAYAAAABAAIAAAABAAYAAAABAAIAAAACAAYAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAIAAAAHAAYAAAABAAIAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAAAAAMAAAAFAP//AAABAAAAAAAGAP//AAAEAAAAAAAHAP//AAABAAAAAAAIAAYAAAACAAIAAAD//wYAAAAAAAIAAAAIAP//AAACAAAAAAD/////AAAAAAAAAAAEAAAAAAABAAMAAAAEAAEAAAACAAMAAAAAAAIAAAAFAAMAAAA=")
+tile_set = ExtResource("2_jg6dk")
+
+[node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
+script = ExtResource("1_yci7k")
+tile_map = NodePath("GridTile")
+path_line = NodePath("AstarLine")
+start_pos = Vector2i(0, 0)
+occupied_cell = {
+Vector2i(3, 1): SubResource("Resource_1biqa")
+}
+
+[node name="GridTile" type="TileMapLayer" parent="GridSystem"]
+tile_set = ExtResource("3_kitjk")
+
+[node name="AstarLine" type="Line2D" parent="GridSystem"]
+
+[node name="GhostCursor" parent="." instance=ExtResource("1_4ueph")]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_dbd7c")
+initial_state = NodePath("Idle")
+
+[node name="Dragging" type="Node" parent="StateMachine"]
+script = ExtResource("4_tphfx")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_kitjk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeldVisual" parent="CanvasLayer" instance=ExtResource("2_yci7k")]
+position = Vector2(0, 1)
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 126.0
+offset_bottom = 48.0
+theme_override_fonts/normal_font = ExtResource("12_micd6")
+bbcode_enabled = true
+fit_content = true
+
+[node name="MapPosition" type="Marker2D" parent="."]
+position = Vector2(144, 32)

@@ -29,6 +29,6 @@ func apply_swaying_effect(velocity_diff: Vector2, delta: float):
 	var target_skew = velocity_diff.x * -0.002
 	visual_root.skew = lerp(visual_root.skew, target_skew, delta * 15.0)
 	
-	# 3. DYNAMIC SHADOW
+	# DYNAMIC SHADOW
 	var shadow_offset = Vector2(8, 8) + (velocity_diff * -0.1)
 	shadow.position = shadow.position.lerp(shadow_offset, delta * 10.0)
