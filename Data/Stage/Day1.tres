@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 [resource]
 script = ExtResource("1_i0nt0")
 title = "[u]The Food[/u]"
-day = 1
+next_scene = "uid://7gm2dqrkuw1q"
 description = "He probably didn't eat today."
 goal = "Move the Junk around to clear path between Rafi's bed and pizza box."
 trash_goal = 1

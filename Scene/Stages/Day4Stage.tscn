@@ -97,6 +97,7 @@ tile_set = ExtResource("4_bf1ac")
 
 [node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
 script = ExtResource("5_20587")
+end_pos = Vector2i(1, 5)
 tile_map = NodePath("../MapContainer/GridTile")
 path_line = NodePath("../MapContainer/AstarLine")
 stage_data = ExtResource("2_ek7bl")

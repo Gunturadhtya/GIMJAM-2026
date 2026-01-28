@@ -72,8 +72,8 @@ func _attempt_place_item():
 	_validate_position()
 	if is_valid_drop:
 		current_trash.last_rotated_degree = current_trash.get_rotation()
-		level.grid_system.place_item(current_grid_pos, current_trash)
 		level.current_trash_count += 1
+		level.grid_system.place_item(current_grid_pos, current_trash)
 		finished.emit("Idle") 
 	else:
 		_stop_dragging()
@@ -86,9 +86,8 @@ func _stop_dragging():
 		current_trash.rotate()
 	
 	current_trash.last_rotated_degree = current_trash.get_rotation()
-	
-	level.grid_system.place_item(current_trash.get_last_origin(), current_trash)
 	level.current_trash_count += 1
+	level.grid_system.place_item(current_trash.get_last_origin(), current_trash)
 	finished.emit("Idle")
 
 func _update_ghost_visual():

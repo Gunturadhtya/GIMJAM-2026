@@ -15,11 +15,13 @@ func handle_input(_event: InputEvent):
 		_handle_click()
 
 func _handle_click():
+	
 	var selected_item = level.grid_system.get_item(current_grid_pos)
 	
 	if selected_item != null:
 		level.current_trash_count -= 1
-		print("Picked up item")
+		print(level.current_trash_count)
+		level.grid_system.grid_updated.emit()
 		finished.emit("Dragging", {"trash" : selected_item})
 	else:
 		print("Clicked empty space")

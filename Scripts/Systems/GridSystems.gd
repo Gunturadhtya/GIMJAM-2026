@@ -132,7 +132,7 @@ func get_item(clicked_pos: Vector2i) -> TrashShape:
 		tile_map.erase_cell(cell)
 		astar.set_point_solid(cell, false)
 
-	grid_updated.emit()
+	#grid_updated.emit()
 	redraw_path()
 	return item_to_pickup
 
