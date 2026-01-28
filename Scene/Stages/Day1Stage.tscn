@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cya65lsp177sc"]
+[gd_scene load_steps=13 format=4 uid="uid://cya65lsp177sc"]
 
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
@@ -9,21 +9,9 @@
 [ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="3_dbd7c"]
 [ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="3_kitjk"]
 [ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="4_tphfx"]
-[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="4_u0lrj"]
-[ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="5_1biqa"]
 [ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="5_kitjk"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_micd6"]
 [ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="13_t0qmm"]
-
-[sub_resource type="Resource" id="Resource_1biqa"]
-script = ExtResource("4_u0lrj")
-atlas_id = 8
-texture = ExtResource("5_1biqa")
-atlas_coords = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
-offset = Array[Vector2i]([Vector2i(1, 0), Vector2i(1, 1), Vector2i(0, 1)])
-_rotated_degree = 90
-_last_origin = Vector2i(0, 0)
-metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [node name="Day1Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
 script = ExtResource("1_tphfx")
@@ -55,12 +43,9 @@ tile_set = ExtResource("3_kitjk")
 
 [node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
 script = ExtResource("1_yci7k")
+end_pos = Vector2i(3, 1)
 tile_map = NodePath("../MapContainer/GridTile")
 path_line = NodePath("../MapContainer/AstarLine")
-end_pos = Vector2i(3, 1)
-occupied_cell = {
-Vector2i(3, 1): SubResource("Resource_1biqa")
-}
 
 [node name="GhostCursor" parent="." instance=ExtResource("1_4ueph")]
 
@@ -96,6 +81,3 @@ offset_bottom = 48.0
 theme_override_fonts/normal_font = ExtResource("12_micd6")
 bbcode_enabled = true
 fit_content = true
-
-[node name="MapPosition" type="Marker2D" parent="."]
-position = Vector2(144, 32)
