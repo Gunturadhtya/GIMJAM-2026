@@ -31,8 +31,13 @@ func _setup_astar():
 	astar.update()
 	
 	# Hardcoding the wall
+	astar.set_point_solid(Vector2i(1, 0))
+	astar.set_point_solid(Vector2i(2, 0))
+	astar.set_point_solid(Vector2i(3, 0))
 	astar.set_point_solid(Vector2i(4, 0))
 	astar.set_point_solid(Vector2i(4, 1))
+	astar.set_point_solid(Vector2i(0, 0))
+	astar.set_point_solid(Vector2i(0, 1))
 	astar.set_point_solid(Vector2i(0, 2))
 
 func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]):
@@ -44,6 +49,9 @@ func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]):
 		if occupied_cell.has(target): return false
 		if target == start_pos or target == end_pos: return false
 	return true
+
+func check_path():
+	return !astar.get_id_path(start_pos, end_pos).is_empty()
 
 func place_item(origin: Vector2i, trash: TrashShape):
 	var i = 0

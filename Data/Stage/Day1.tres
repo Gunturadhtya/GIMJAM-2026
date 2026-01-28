@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=2 format=3 uid="uid://4frow7lr3mii"]
+
+[ext_resource type="Script" uid="uid://byo78viqn3s5q" path="res://Scripts/StageData.gd" id="1_i0nt0"]
+
+[resource]
+script = ExtResource("1_i0nt0")
+title = "Title"
+day = 1
+description = ""
+trash_goal = 1
+metadata/_custom_type_script = "uid://byo78viqn3s5q"

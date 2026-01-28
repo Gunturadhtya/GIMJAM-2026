@@ -3,20 +3,17 @@
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ungln"]
 [ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="2_2e573"]
 [ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="3_2e573"]
-[ext_resource type="Resource" uid="uid://bfxkilv7otuv2" path="res://Data/JShape.tres" id="3_s2bof"]
+[ext_resource type="Resource" uid="uid://bfxkilv7otuv2" path="res://Data/Shape/JShape.tres" id="3_s2bof"]
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="4_ungln"]
 [ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="5_2e573"]
 [ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="5_6qa0l"]
 [ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="6_7bsvn"]
 [ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="7_nptyh"]
 
-[node name="PrototypeScene" type="Node2D" node_paths=PackedStringArray("grid_system", "ghost_cursor", "state_machine", "tile_map", "held_visual") groups=["LevelManager"]]
+[node name="PrototypeScene" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
 script = ExtResource("1_ungln")
 grid_system = NodePath("GridSystem")
-ghost_cursor = NodePath("GhostCursor")
 state_machine = NodePath("StateMachine")
-tile_map = NodePath("GridSystem/TileMapLayer")
-held_visual = NodePath("CanvasLayer/HeldVisual")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

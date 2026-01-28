@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://cya65lsp177sc"]
+[gd_scene load_steps=15 format=4 uid="uid://cya65lsp177sc"]
 
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
 [ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="1_yci7k"]
 [ext_resource type="TileSet" uid="uid://c2b85kq11pwdo" path="res://Assets/tilemap/BackgroundTileset.tres" id="2_jg6dk"]
+[ext_resource type="Resource" uid="uid://4frow7lr3mii" path="res://Data/Stage/Day1.tres" id="2_xoslf"]
 [ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="2_yci7k"]
 [ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="3_dbd7c"]
 [ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="3_kitjk"]
@@ -23,42 +24,42 @@ _rotated_degree = 90
 _last_origin = Vector2i(0, 0)
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
-[node name="Day1Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "ghost_cursor", "state_machine", "tile_map", "held_visual", "map_position") groups=["LevelManager"]]
+[node name="Day1Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
 script = ExtResource("1_tphfx")
 grid_system = NodePath("GridSystem")
-ghost_cursor = NodePath("GhostCursor")
 state_machine = NodePath("StateMachine")
-tile_map = NodePath("GridSystem/GridTile")
-held_visual = NodePath("CanvasLayer/HeldVisual")
-map_position = NodePath("MapPosition")
+stage_data = ExtResource("2_xoslf")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
-color = Color(0.187176, 0.187176, 0.187176, 1)
+color = Color(0.0901961, 0.0666667, 0.101961, 1)
 
-[node name="Floor" type="TileMapLayer" parent="."]
+[node name="MapContainer" type="Node2D" parent="."]
+position = Vector2(144, 32)
+
+[node name="Floor" type="TileMapLayer" parent="MapContainer"]
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAIAAAAAAAAAAQAAAAAAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAADAAIAAQABAAEAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAABAAIAAQABAAEAAAABAAMAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAACAAMAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAFAAMAAQABAAEAAAAGAAIAAQABAAEAAAAFAAIAAQABAAEAAAAEAAIAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAAHAAEAAQACAAEAAAAHAAIAAQACAAEAAAAHAAMAAQACAAEAAAAHAAQAAQACAAEAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQACAAIAAAAHAAAAAQACAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="Wall" type="TileMapLayer" parent="."]
+[node name="Wall" type="TileMapLayer" parent="MapContainer"]
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAADAAMAAAD//wMAAAAAAAEAAAD//wQAAAADAAEAAAD//wUAAAAAAAEAAAAIAAAAAAACAAEAAAAIAAEAAAACAAEAAAAIAAIAAAAFAAEAAAAIAAMAAAACAAEAAAAIAAQAAAAEAAEAAAAIAAUAAAACAAEAAAAAAAYAAAABAAIAAAABAAYAAAABAAIAAAACAAYAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAIAAAAHAAYAAAABAAIAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAAAAAMAAAAFAP//AAABAAAAAAAGAP//AAAEAAAAAAAHAP//AAABAAAAAAAIAAYAAAACAAIAAAD//wYAAAAAAAIAAAAIAP//AAACAAAAAAD/////AAAAAAAAAAAEAAAAAAABAAMAAAAEAAEAAAACAAMAAAAAAAIAAAAFAAMAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
+[node name="GridTile" type="TileMapLayer" parent="MapContainer"]
+tile_set = ExtResource("3_kitjk")
+
+[node name="AstarLine" type="Line2D" parent="MapContainer"]
+
 [node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
 script = ExtResource("1_yci7k")
-tile_map = NodePath("GridTile")
-path_line = NodePath("AstarLine")
-start_pos = Vector2i(0, 0)
+tile_map = NodePath("../MapContainer/GridTile")
+path_line = NodePath("../MapContainer/AstarLine")
+end_pos = Vector2i(3, 1)
 occupied_cell = {
 Vector2i(3, 1): SubResource("Resource_1biqa")
 }
-
-[node name="GridTile" type="TileMapLayer" parent="GridSystem"]
-tile_set = ExtResource("3_kitjk")
-
-[node name="AstarLine" type="Line2D" parent="GridSystem"]
 
 [node name="GhostCursor" parent="." instance=ExtResource("1_4ueph")]
 
@@ -66,8 +67,10 @@ tile_set = ExtResource("3_kitjk")
 script = ExtResource("3_dbd7c")
 initial_state = NodePath("Idle")
 
-[node name="Dragging" type="Node" parent="StateMachine"]
+[node name="Dragging" type="Node" parent="StateMachine" node_paths=PackedStringArray("ghost_cursor", "held_visual")]
 script = ExtResource("4_tphfx")
+ghost_cursor = NodePath("../../GhostCursor")
+held_visual = NodePath("../../CanvasLayer/HeldVisual")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("5_kitjk")
