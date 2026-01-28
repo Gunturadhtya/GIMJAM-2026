@@ -16,6 +16,8 @@ func _ready() -> void:
 	if ui:
 		ui.setup(stage_data)
 	
+	current_trash_count = stage_data.trash_goal
+	
 	grid_system.grid_updated.connect(_on_path_changed)
 
 func _on_path_changed():

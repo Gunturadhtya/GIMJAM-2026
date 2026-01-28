@@ -6,6 +6,8 @@
 script = ExtResource("1_i0nt0")
 title = "Title"
 day = 1
-description = ""
+description = "Description
+
+Desc"
 trash_goal = 1
 metadata/_custom_type_script = "uid://byo78viqn3s5q"

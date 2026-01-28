@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cya65lsp177sc"]
+[gd_scene load_steps=16 format=4 uid="uid://cya65lsp177sc"]
 
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cisiqxnwottu6" path="res://Assets/junk_j_1.png" id="5_1biqa"]
 [ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="5_kitjk"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_micd6"]
+[ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="13_t0qmm"]
 
 [sub_resource type="Resource" id="Resource_1biqa"]
 script = ExtResource("4_u0lrj")
@@ -80,7 +81,14 @@ script = ExtResource("5_kitjk")
 [node name="HeldVisual" parent="CanvasLayer" instance=ExtResource("2_yci7k")]
 position = Vector2(0, 1)
 
-[node name="Description" type="RichTextLabel" parent="CanvasLayer"]
+[node name="LevelUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_t0qmm")
+
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
 offset_left = 32.0
 offset_top = 8.0
 offset_right = 126.0
