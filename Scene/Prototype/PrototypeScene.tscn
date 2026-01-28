@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjlb10vbfmrui"]
+[gd_scene load_steps=9 format=3 uid="uid://bjlb10vbfmrui"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ungln"]
 [ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="2_2e573"]
 [ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="3_2e573"]
-[ext_resource type="Resource" uid="uid://bfxkilv7otuv2" path="res://Data/Shape/JShape.tres" id="3_s2bof"]
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="4_ungln"]
 [ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="5_2e573"]
 [ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="5_6qa0l"]
@@ -25,9 +24,6 @@ color = Color(0.114897, 0.114897, 0.114897, 1)
 script = ExtResource("2_2e573")
 tile_map = NodePath("TileMapLayer")
 path_line = NodePath("PathLine")
-occupied_cell = {
-Vector2i(3, 2): ExtResource("3_s2bof")
-}
 
 [node name="TileMapLayer" type="TileMapLayer" parent="GridSystem"]
 tile_set = ExtResource("3_2e573")
