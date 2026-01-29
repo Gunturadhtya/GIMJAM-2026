@@ -36,6 +36,7 @@ func _check_win_condition():
 	print("on win ", current_trash_count)
 	if current_trash_count == stage_data.trash_goal and grid_system.check_path():
 		Global.is_dialogue_active = true
+		ui.desc_label.visible = false
 		dialogue.start_sequence(stage_data.dialogue)
 
 func _handle_win():
