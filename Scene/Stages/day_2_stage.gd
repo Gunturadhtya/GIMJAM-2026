@@ -1,4 +1,25 @@
-class_name Day2 extends LevelManager
+class_name LevelManager extends Node2D
+
+@export_group("Systems")
+@export var grid_system: GridSystem
+@export var state_machine: StateMachine
+
+@export_group("Level Data")
+@export var stage_data: StageData
+
+@export_group("Cutscene Settings")
+@export var path_ratio: float
+@export var go_back: bool
+	
+@onready var ui = $CanvasLayer/LevelUI 
+@onready var animation_player = $AnimationPlayer
+@onready var transition_overlay = $TransitionLayer/TransitionOverlay
+@onready var dialogue = $CanvasLayer/LevelUI/Dialogue
+@onready var cutscene_path = $MapContainer/CutscenePath
+
+@onready var player_tile = $MapContainer/Player
+
+var current_trash_count: int = 0
 
 func _ready() -> void:
 	Global.is_dialogue_active = false
@@ -38,8 +59,13 @@ func _handle_win():
 	print("You Win!")
 
 	set_process_input(false) 
+	
+	cutscene_path.return_back()
+	await cutscene_path.cutscene_finished
+	
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
+	
 	get_tree().change_scene_to_file(stage_data.next_scene)
 
 func _on_dialogue_ended():

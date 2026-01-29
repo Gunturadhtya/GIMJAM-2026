@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://7gm2dqrkuw1q"]
 
-[ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ko5eg"]
+[ext_resource type="Script" uid="uid://tumsv65nyb2t" path="res://Scene/Stages/day_2_stage.gd" id="1_3qp4l"]
 [ext_resource type="Resource" uid="uid://q50arvmrv1tg" path="res://Data/Stage/Day2.tres" id="2_ko5eg"]
 [ext_resource type="TileSet" uid="uid://c2b85kq11pwdo" path="res://Assets/tilemap/BackgroundTileset.tres" id="3_hxj81"]
 [ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="4_kok4f"]
@@ -73,7 +73,7 @@ _data = {
 }
 
 [node name="Day2Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
-script = ExtResource("1_ko5eg")
+script = ExtResource("1_3qp4l")
 grid_system = NodePath("GridSystem")
 state_machine = NodePath("StateMachine")
 stage_data = ExtResource("2_ko5eg")

@@ -28,6 +28,9 @@ func run_sequence(astar_points: Array[Vector2], stop_ratio: float, do_return: bo
 			sprite.position = Vector2(-0.0, 7.0)
 			sprite.play("scene_day1")
 			await sprite.animation_finished
+		2:
+			sprite.rotation_degrees = -180
+			
 		3:
 			sprite.rotation_degrees = 90
 			sprite.position = Vector2(-7.0, 0.0)
@@ -52,6 +55,19 @@ func run_sequence(astar_points: Array[Vector2], stop_ratio: float, do_return: bo
 	
 	#sprite.play("idle")
 	Global.is_cutscene_active = false
+	cutscene_finished.emit()
+
+func return_back():
+	
+	await get_tree().create_timer(1.0).timeout
+	sprite.rotation_degrees = -90
+	sprite.flip_v = true
+	sprite.play("walk")
+	await _tween_movement(0.0)
+	sprite.flip_h = false
+	
+	sprite.play("idle")
+	
 	cutscene_finished.emit()
 
 func _tween_movement(target_ratio: float):
