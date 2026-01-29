@@ -1,10 +1,17 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://c2b85kq11pwdo"]
+[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://c2b85kq11pwdo"]
 
 [ext_resource type="Texture2D" uid="uid://bp062i4xaaa63" path="res://Assets/tilemap/wall_tileset.png" id="1_ympja"]
 [ext_resource type="Texture2D" uid="uid://dkcjyli5a2xgf" path="res://Assets/tilemap/floor_tileset.png" id="2_xakb1"]
+[ext_resource type="Texture2D" uid="uid://lmtv1njg2dge" path="res://Assets/goal/goal_pizzabox.png" id="3_bpja3"]
 [ext_resource type="Texture2D" uid="uid://drp6je0uds14o" path="res://Assets/unmoveable/object_bed.png" id="3_r0ojk"]
+[ext_resource type="Texture2D" uid="uid://cx2j01mdwfaph" path="res://Assets/goal/goal_wardrobe.png" id="4_hqhy0"]
 [ext_resource type="Texture2D" uid="uid://betqk6dqm7sec" path="res://Assets/unmoveable/object_sidedesk.png" id="4_kfkvt"]
 [ext_resource type="Texture2D" uid="uid://dchiqscedobvd" path="res://Assets/ui/tile_highlight.png" id="5_kfkvt"]
+[ext_resource type="Texture2D" uid="uid://bhhvfjnqiypco" path="res://Assets/goal/goalanim_camera.png" id="8_tmlj2"]
+[ext_resource type="Texture2D" uid="uid://ci2qrjbu3g14" path="res://Assets/goal/goalanim_pizza.png" id="9_mwfyd"]
+[ext_resource type="Texture2D" uid="uid://dw7hwqsjrv2u7" path="res://Assets/goal/goalanim_water_picture.png" id="10_x237a"]
+[ext_resource type="Texture2D" uid="uid://bkbosv0faw5sv" path="res://Assets/goal/goal_desk.png" id="11_l2o8m"]
+[ext_resource type="Texture2D" uid="uid://co3akvmuaqnjq" path="res://Assets/goal/goal_notice.png" id="12_jgdgf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0ojk"]
 texture = ExtResource("1_ympja")
@@ -40,6 +47,15 @@ texture = ExtResource("2_xakb1")
 1:2/0 = 0
 2:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nghln"]
+texture = ExtResource("3_bpja3")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pweb"]
+texture = ExtResource("4_hqhy0")
+0:0/0 = 0
+0:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2csqs"]
 texture = ExtResource("3_r0ojk")
 0:0/0 = 0
@@ -59,9 +75,37 @@ texture = ExtResource("5_kfkvt")
 0:0/animation_frame_1/duration = 0.2
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o64b3"]
+texture = ExtResource("8_tmlj2")
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qjwi"]
+texture = ExtResource("9_mwfyd")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fua5r"]
+texture = ExtResource("10_x237a")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s46cb"]
+texture = ExtResource("11_l2o8m")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3sw2"]
+texture = ExtResource("12_jgdgf")
+0:0/0 = 0
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_r0ojk")
 sources/1 = SubResource("TileSetAtlasSource_kfkvt")
 sources/2 = SubResource("TileSetAtlasSource_2csqs")
 sources/3 = SubResource("TileSetAtlasSource_0yn0w")
 sources/4 = SubResource("TileSetAtlasSource_xn47n")
+sources/5 = SubResource("TileSetAtlasSource_o64b3")
+sources/6 = SubResource("TileSetAtlasSource_7qjwi")
+sources/7 = SubResource("TileSetAtlasSource_fua5r")
+sources/8 = SubResource("TileSetAtlasSource_s46cb")
+sources/9 = SubResource("TileSetAtlasSource_e3sw2")
+sources/10 = SubResource("TileSetAtlasSource_nghln")
+sources/11 = SubResource("TileSetAtlasSource_5pweb")
