@@ -14,6 +14,9 @@ func _ready():
 	start_button.pressed.connect(_on_start_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	animation_player.play("fade_in")
+	
+	await animation_player.animation_finished
+	AudioManager.play_bgm(load("res://Assets/Music/Tidy Up Sad.mp3"))
 
 func _on_start_pressed():
 	set_process_input(false) 
