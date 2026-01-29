@@ -153,7 +153,7 @@ metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 script = ExtResource("24_o8dji")
 title = "[u]The Outside[/u]"
 day = 5
-next_scene = "uid://e56el7surqpk"
+next_scene = "uid://rmlntptbbn4r"
 description = "He's Ready."
 goal = "Clear the way to the door"
 trash_goal = 9
@@ -168,5 +168,5 @@ Vector2i(5, 5): SubResource("Resource_1j5sr"),
 Vector2i(6, 4): SubResource("Resource_wgflv"),
 Vector2i(7, 1): SubResource("Resource_gxi8c")
 })
-dialogue = Array[String](["You probably miss taking pictures up there, right?", "I'll do it for you.|0.5| With your camera", "From now on, I'll keep documenting the world for you|0.2|.|0.2|.||0.2|.", "|0.2|Sonia."])
+dialogue = Array[String](["You probably miss taking pictures up there, right?", "I'll do it for you.|0.5| With your camera", "From now on, I'll keep documenting the world for you|0.4|.|0.4|.|0.4|.", "|0.2|Sonia."])
 metadata/_custom_type_script = "uid://byo78viqn3s5q"

@@ -1,12 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dawsrkrgv1xvq"]
+[gd_scene load_steps=12 format=3 uid="uid://rmlntptbbn4r"]
 
-[ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="1_hfc36"]
-[ext_resource type="Script" uid="uid://pnpdyb65j3ru" path="res://Scene/Storytellling/intro.gd" id="1_nubaf"]
-[ext_resource type="Script" uid="uid://m6e7qn473y1a" path="res://Scripts/StoryTelling/Dialogue.gd" id="2_nubaf"]
-[ext_resource type="Texture2D" uid="uid://cc0naunkl608j" path="res://Assets/cutscene/intro.png" id="2_yod6r"]
-[ext_resource type="AudioStream" uid="uid://drcose2miabtp" path="res://Assets/Bip/Bip_Naration_Rev.mp3" id="5_ciy82"]
-[ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="6_w23nx"]
-[ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="7_ciy82"]
+[ext_resource type="Texture2D" uid="uid://cc0naunkl608j" path="res://Assets/cutscene/intro.png" id="1_p245i"]
+[ext_resource type="Script" uid="uid://cf5dvob1wsoa3" path="res://Scene/Storytellling/outro.gd" id="1_tmgdr"]
+[ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="2_tmgdr"]
+[ext_resource type="Script" uid="uid://m6e7qn473y1a" path="res://Scripts/StoryTelling/Dialogue.gd" id="3_upswj"]
+[ext_resource type="AudioStream" uid="uid://ov5r8b40n1ro" path="res://Assets/Bip/Bip_Sister_Rev.mp3" id="5_tmgdr"]
+[ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="5_xgp2v"]
+[ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="6_kfg7a"]
 
 [sub_resource type="Animation" id="Animation_e7jyp"]
 length = 0.001
@@ -62,8 +62,8 @@ _data = {
 &"fade_out": SubResource("Animation_qaxhb")
 }
 
-[node name="Intro" type="Node2D"]
-script = ExtResource("1_nubaf")
+[node name="Outro" type="Node2D"]
+script = ExtResource("1_tmgdr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -77,12 +77,13 @@ color = Color(0.0901961, 0.0666667, 0.101961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Cover" type="TextureRect" parent="CanvasLayer"]
+visible = false
 offset_left = 16.0
 offset_top = -10.0
 offset_right = 958.0
 offset_bottom = 647.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_yod6r")
+texture = ExtResource("1_p245i")
 metadata/_edit_use_anchors_ = true
 
 [node name="IntroUI" type="Control" parent="CanvasLayer"]
@@ -94,15 +95,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/IntroUI"]
 clip_contents = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -3.25
 offset_top = 131.0
 offset_right = 320.0
 offset_bottom = 181.0
-theme_override_fonts/normal_font = ExtResource("1_hfc36")
+theme_override_fonts/normal_font = ExtResource("2_tmgdr")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_nubaf")
-voice_sound = ExtResource("5_ciy82")
+script = ExtResource("3_upswj")
+voice_sound = ExtResource("5_tmgdr")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -110,7 +113,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_u8anr")
 }
 
-[node name="PostProcess" parent="." instance=ExtResource("6_w23nx")]
+[node name="PostProcess" parent="." instance=ExtResource("5_xgp2v")]
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 layer = 69
@@ -126,6 +129,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CursorLayer" parent="." instance=ExtResource("7_ciy82")]
+[node name="CursorLayer" parent="." instance=ExtResource("6_kfg7a")]
 
 [editable path="CursorLayer"]

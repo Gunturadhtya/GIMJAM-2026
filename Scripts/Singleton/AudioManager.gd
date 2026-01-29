@@ -11,7 +11,7 @@ func _ready():
 
 func play_bgm(stream: AudioStream):
 	if bgm_player.stream == stream and bgm_player.playing:
-		return 
+		bgm_player.stop()
 	bgm_player.stream = stream
 	bgm_player.play()
 
