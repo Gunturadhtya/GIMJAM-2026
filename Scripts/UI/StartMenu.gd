@@ -19,12 +19,14 @@ func _ready():
 	AudioManager.play_bgm(load("res://Assets/Music/Tidy Up Sad.mp3"))
 
 func _on_start_pressed():
+	AudioManager.play_sfx(load("res://Assets/sfx/Click_SFX_New.mp3"))
 	set_process_input(false) 
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file(start_scene_path)
 
 func _on_quit_pressed():
+	AudioManager.play_sfx(load("res://Assets/sfx/Click_SFX_New.mp3"))
 	set_process_input(false) 
 	animation_player.play("fade_out")
 	await animation_player.animation_finished

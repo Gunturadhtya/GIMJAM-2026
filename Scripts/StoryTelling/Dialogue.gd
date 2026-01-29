@@ -66,3 +66,4 @@ func _type_text(full_string: String):
 	
 	await get_tree().process_frame 
 	_is_typing = false
+	
