@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://rmlntptbbn4r"]
 
-[ext_resource type="Texture2D" uid="uid://cc0naunkl608j" path="res://Assets/cutscene/intro.png" id="1_p245i"]
 [ext_resource type="Script" uid="uid://cf5dvob1wsoa3" path="res://Scene/Storytellling/outro.gd" id="1_tmgdr"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="2_tmgdr"]
+[ext_resource type="Texture2D" uid="uid://chlgb1b21wsu" path="res://Assets/cutscene/ending_photo.png" id="2_upswj"]
 [ext_resource type="Script" uid="uid://m6e7qn473y1a" path="res://Scripts/StoryTelling/Dialogue.gd" id="3_upswj"]
 [ext_resource type="AudioStream" uid="uid://ov5r8b40n1ro" path="res://Assets/Bip/Bip_Sister_Rev.mp3" id="5_tmgdr"]
 [ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="5_xgp2v"]
@@ -77,13 +77,12 @@ color = Color(0.0901961, 0.0666667, 0.101961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Cover" type="TextureRect" parent="CanvasLayer"]
-visible = false
-offset_left = 16.0
-offset_top = -10.0
-offset_right = 958.0
-offset_bottom = 647.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_p245i")
+offset_left = 85.0
+offset_top = 29.0
+offset_right = 1027.0
+offset_bottom = 686.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_upswj")
 metadata/_edit_use_anchors_ = true
 
 [node name="IntroUI" type="Control" parent="CanvasLayer"]
@@ -97,7 +96,7 @@ metadata/_edit_use_anchors_ = true
 clip_contents = false
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -3.25
+anchor_top = -0.1
 offset_top = 131.0
 offset_right = 320.0
 offset_bottom = 181.0
@@ -114,9 +113,11 @@ libraries = {
 }
 
 [node name="PostProcess" parent="." instance=ExtResource("5_xgp2v")]
+visible = false
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 layer = 69
+visible = false
 
 [node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
 anchors_preset = 15
@@ -130,5 +131,6 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CursorLayer" parent="." instance=ExtResource("6_kfg7a")]
+visible = false
 
 [editable path="CursorLayer"]
