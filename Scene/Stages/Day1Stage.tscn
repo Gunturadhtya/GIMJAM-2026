@@ -99,7 +99,11 @@ tile_map_data = PackedByteArray("AAADAAEABgAAAAAAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
 [node name="Object" type="TileMapLayer" parent="MapContainer"]
-tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAADAAEABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAADAAEABAAAAAAAAAAFAAAACAAAAAAAAAABAAUACwAAAAAAAAABAAYACwAAAAEAAAA=")
+tile_set = ExtResource("2_jg6dk")
+
+[node name="Object2" type="TileMapLayer" parent="MapContainer"]
+tile_map_data = PackedByteArray("AAABAAUABQAAAAAAAAABAAYABQAAAAEAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
 [node name="GridTile" type="TileMapLayer" parent="MapContainer"]

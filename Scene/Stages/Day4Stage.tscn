@@ -95,7 +95,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAADAAM
 tile_set = ExtResource("3_3rwpp")
 
 [node name="Wardrobe" type="TileMapLayer" parent="MapContainer"]
-tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAABAAUACwAAAAAAAAABAAYACwAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAABAAUACwAAAAAAAAABAAYACwAAAAEAAAAFAAAACAAAAAAAAAA=")
 tile_set = ExtResource("3_3rwpp")
 
 [node name="Goal" type="TileMapLayer" parent="MapContainer"]
@@ -174,9 +174,11 @@ libraries = {
 [node name="CursorLayer" parent="." instance=ExtResource("13_dcp87")]
 
 [node name="PostProcess" parent="." instance=ExtResource("14_3rwpp")]
+visible = false
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 layer = 69
+visible = false
 
 [node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
 anchors_preset = 15

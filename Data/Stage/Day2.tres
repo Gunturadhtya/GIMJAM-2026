@@ -78,6 +78,20 @@ sfx_place = ExtResource("6_w43m3")
 sfx_take = ExtResource("8_0fu8f")
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
+[sub_resource type="Resource" id="Resource_jtggg"]
+script = ExtResource("1_yh488")
+atlas_id = 20
+texture = ExtResource("20_qw5pt")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+_rotated_degree = 270
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+sfx_rotate = ExtResource("18_bgnmp")
+sfx_place = ExtResource("17_iuegr")
+sfx_take = ExtResource("19_a2c8h")
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
 [sub_resource type="Resource" id="Resource_cvjru"]
 script = ExtResource("1_yh488")
 atlas_id = 15
@@ -104,20 +118,6 @@ last_rotated_degree = 0
 sfx_rotate = ExtResource("14_m2moj")
 sfx_place = ExtResource("13_apj66")
 sfx_take = ExtResource("15_n12w6")
-metadata/_custom_type_script = "uid://cnbjqq33c46o2"
-
-[sub_resource type="Resource" id="Resource_jtggg"]
-script = ExtResource("1_yh488")
-atlas_id = 20
-texture = ExtResource("20_qw5pt")
-atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
-offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
-_rotated_degree = 270
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
-sfx_rotate = ExtResource("18_bgnmp")
-sfx_place = ExtResource("17_iuegr")
-sfx_take = ExtResource("19_a2c8h")
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [resource]

@@ -48,6 +48,20 @@ sfx_place = ExtResource("2_tbifw")
 sfx_take = ExtResource("4_fhxor")
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
+[sub_resource type="Resource" id="Resource_7odlr"]
+script = ExtResource("1_m04jl")
+atlas_id = 17
+texture = ExtResource("17_cnwtn")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(1, 2)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(1, 2)])
+_rotated_degree = 90
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+sfx_rotate = ExtResource("3_gqbp0")
+sfx_place = ExtResource("2_tbifw")
+sfx_take = ExtResource("4_fhxor")
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"
+
 [sub_resource type="Resource" id="Resource_crtxs"]
 script = ExtResource("1_m04jl")
 atlas_id = 11
@@ -76,13 +90,13 @@ sfx_place = ExtResource("11_mliyy")
 sfx_take = ExtResource("13_o3y2k")
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
-[sub_resource type="Resource" id="Resource_7odlr"]
+[sub_resource type="Resource" id="Resource_tbifw"]
 script = ExtResource("1_m04jl")
-atlas_id = 17
-texture = ExtResource("17_cnwtn")
-atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(1, 2)])
-offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(1, 2)])
-_rotated_degree = 90
+atlas_id = 19
+texture = ExtResource("16_3ye63")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+_rotated_degree = 0
 _last_origin = Vector2i(0, 0)
 last_rotated_degree = 0
 sfx_rotate = ExtResource("3_gqbp0")
@@ -102,20 +116,6 @@ last_rotated_degree = 0
 sfx_rotate = ExtResource("12_ji0o6")
 sfx_place = ExtResource("11_mliyy")
 sfx_take = ExtResource("13_o3y2k")
-metadata/_custom_type_script = "uid://cnbjqq33c46o2"
-
-[sub_resource type="Resource" id="Resource_tbifw"]
-script = ExtResource("1_m04jl")
-atlas_id = 19
-texture = ExtResource("16_3ye63")
-atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
-offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
-_rotated_degree = 0
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
-sfx_rotate = ExtResource("3_gqbp0")
-sfx_place = ExtResource("2_tbifw")
-sfx_take = ExtResource("4_fhxor")
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 
 [resource]
