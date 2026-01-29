@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://m6e7qn473y1a" path="res://Scripts/StoryTelling/Dialogue.gd" id="13_6rnc8"]
 [ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="13_wsvax"]
 [ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="14_4fy1h"]
-[ext_resource type="AudioStream" uid="uid://bq1xpuartmvye" path="res://Assets/Bip/Bip_Rafi_New.mp3" id="14_4scmu"]
+[ext_resource type="AudioStream" uid="uid://cl6y3pbqmri5g" path="res://Assets/Bip/Bip_Rafi_Rev.mp3" id="15_4scmu"]
 
 [sub_resource type="Animation" id="Animation_e7jyp"]
 length = 0.001
@@ -171,7 +171,7 @@ theme_override_fonts/normal_font = ExtResource("12_pp82e")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_6rnc8")
-voice_sound = ExtResource("14_4scmu")
+voice_sound = ExtResource("15_4scmu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
