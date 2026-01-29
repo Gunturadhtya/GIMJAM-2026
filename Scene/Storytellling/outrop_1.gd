@@ -1,8 +1,8 @@
 extends Node2D
 
 var ending_text: Array = [
-	"The world|0.3| isn't so cruel|0.6| after all.",
-	"Right,|0.8| brother?"
+	"He finally|0.5| went outside.",
+	"Please|0.4| keep taking pictures."
 ]
 
 func _ready() -> void:
@@ -18,4 +18,4 @@ func _on_dialogue_finished():
 	
 	await $AnimationPlayer.animation_finished
 	
-	get_tree().change_scene_to_file("res://Scene/UI/Menu/StartMenu.tscn")
+	get_tree().change_scene_to_file("res://Scene/Storytellling/Outrop2.tscn")

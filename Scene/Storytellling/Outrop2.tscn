@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rmlntptbbn4r"]
+[gd_scene format=3 uid="uid://rmlntptbbn4r"]
 
 [ext_resource type="Script" uid="uid://cf5dvob1wsoa3" path="res://Scene/Storytellling/outro.gd" id="1_tmgdr"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="2_tmgdr"]
@@ -62,12 +62,12 @@ _data = {
 &"fade_out": SubResource("Animation_qaxhb")
 }
 
-[node name="Outro" type="Node2D"]
+[node name="Outro" type="Node2D" unique_id=732637532]
 script = ExtResource("1_tmgdr")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=717798695]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=26664631]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -76,7 +76,7 @@ grow_vertical = 2
 color = Color(0.0901961, 0.0666667, 0.101961, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Cover" type="TextureRect" parent="CanvasLayer"]
+[node name="Cover" type="TextureRect" parent="CanvasLayer" unique_id=1494143369]
 offset_left = 85.0
 offset_top = 29.0
 offset_right = 1027.0
@@ -85,14 +85,14 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_upswj")
 metadata/_edit_use_anchors_ = true
 
-[node name="IntroUI" type="Control" parent="CanvasLayer"]
+[node name="IntroUI" type="Control" parent="CanvasLayer" unique_id=871336593]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/IntroUI"]
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/IntroUI" unique_id=1792135073]
 clip_contents = false
 layout_mode = 1
 anchors_preset = -1
@@ -107,19 +107,15 @@ script = ExtResource("3_upswj")
 voice_sound = ExtResource("5_tmgdr")
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_u8anr")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2064451400]
+libraries/ = SubResource("AnimationLibrary_u8anr")
 
-[node name="PostProcess" parent="." instance=ExtResource("5_xgp2v")]
-visible = false
+[node name="PostProcess" parent="." unique_id=416986425 instance=ExtResource("5_xgp2v")]
 
-[node name="TransitionLayer" type="CanvasLayer" parent="."]
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1936659007]
 layer = 69
-visible = false
 
-[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
+[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer" unique_id=958053109]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -130,7 +126,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CursorLayer" parent="." instance=ExtResource("6_kfg7a")]
-visible = false
+[node name="CursorLayer" parent="." unique_id=442755092 instance=ExtResource("6_kfg7a")]
 
 [editable path="CursorLayer"]

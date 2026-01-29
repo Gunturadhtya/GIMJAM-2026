@@ -402,7 +402,6 @@ metadata/_custom_type_script = "uid://chwkxnwqivwp8"
 libraries/ = SubResource("AnimationLibrary_u8anr")
 
 [node name="CursorLayer" parent="." unique_id=1519515434 instance=ExtResource("4_qaxhb")]
-visible = false
 
 [node name="PostProcess" parent="." unique_id=1252372949 instance=ExtResource("5_u8anr")]
 

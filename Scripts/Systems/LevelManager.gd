@@ -1,6 +1,26 @@
-class_name Day2 extends LevelManager
+class_name LevelManager extends Node2D
 
+@export_group("Systems")
+@export var grid_system: GridSystem
+@export var state_machine: StateMachine
+
+@export_group("Level Data")
+@export var stage_data: StageData
+
+@export_group("Cutscene Settings")
+@export var path_ratio: float
+@export var go_back: bool
 @export var is_last_stage:bool
+	
+@onready var ui = $CanvasLayer/LevelUI 
+@onready var animation_player = $AnimationPlayer
+@onready var transition_overlay = $TransitionLayer/TransitionOverlay
+@onready var dialogue = $CanvasLayer/LevelUI/Dialogue
+@onready var cutscene_path = $MapContainer/CutscenePath
+
+@onready var player_tile = $MapContainer/Player
+
+var current_trash_count: int = 0
 
 func _ready() -> void:
 	Global.is_dialogue_active = false

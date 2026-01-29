@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cmjwjn24b10gl"]
+[gd_scene format=4 uid="uid://cmjwjn24b10gl"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_wmg3m"]
 [ext_resource type="Resource" uid="uid://cqo4ujusve2lr" path="res://Data/Stage/Day5.tres" id="2_wmg3m"]
@@ -72,77 +72,77 @@ _data = {
 &"fade_out": SubResource("Animation_qaxhb")
 }
 
-[node name="Day5Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
+[node name="Day5Stage" type="Node2D" unique_id=435214363 node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
 script = ExtResource("1_wmg3m")
 grid_system = NodePath("GridSystem")
 state_machine = NodePath("StateMachine")
 stage_data = ExtResource("2_wmg3m")
 path_ratio = 0.99
-go_back = true
+is_last_stage = true
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1715155421]
 offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 color = Color(0.0901961, 0.0666667, 0.101961, 1)
 
-[node name="MapContainer" type="Node2D" parent="."]
+[node name="MapContainer" type="Node2D" parent="." unique_id=479321888]
 position = Vector2(160, 32)
 
-[node name="Floor" type="TileMapLayer" parent="MapContainer"]
+[node name="Floor" type="TileMapLayer" parent="MapContainer" unique_id=1864715163]
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAIAAAAAAAAAAQAAAAAAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAADAAIAAQABAAEAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAABAAIAAQABAAEAAAABAAMAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAACAAMAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAFAAMAAQABAAEAAAAGAAIAAQABAAEAAAAFAAIAAQABAAEAAAAEAAIAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAAHAAEAAQACAAEAAAAHAAIAAQACAAEAAAAHAAMAAQACAAEAAAAHAAQAAQACAAEAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQACAAIAAAAHAAAAAQACAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAA=")
 tile_set = ExtResource("3_xtkmu")
 
-[node name="Wall" type="TileMapLayer" parent="MapContainer"]
+[node name="Wall" type="TileMapLayer" parent="MapContainer" unique_id=105312101]
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAADAAMAAAD//wMAAAAAAAEAAAD//wQAAAADAAEAAAD//wUAAAAAAAEAAAAIAAAAAAACAAEAAAAIAAEAAAACAAEAAAAIAAIAAAAFAAEAAAAIAAMAAAACAAEAAAAIAAQAAAACAAEAAAAIAAUADQAAAAAAAAAAAAYAAAABAAIAAAABAAYAAAABAAIAAAACAAYAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAIAAAAHAAYAAAABAAIAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAAAAAMAAAAFAP//AAABAAAAAAAGAP//AAAEAAAAAAAHAP//AAABAAAAAAAIAAYAAAACAAIAAAD//wYAAAAAAAIAAAAIAP//AAACAAAAAAD/////AAAAAAAAAAAEAAAAAAABAAMAAAAEAAEAAAACAAMAAAAAAAIAAAAFAAMAAAABAAUACwAAAAAAAAA=")
 tile_set = ExtResource("3_xtkmu")
 
-[node name="Highlighter" type="TileMapLayer" parent="MapContainer"]
+[node name="Highlighter" type="TileMapLayer" parent="MapContainer" unique_id=243686920]
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAAHAAUABAAAAAAAAAAFAAAACAAAAAAAAAABAAYACwAAAAEAAAA=")
 tile_set = ExtResource("3_xtkmu")
 
-[node name="GridTile" type="TileMapLayer" parent="MapContainer"]
+[node name="GridTile" type="TileMapLayer" parent="MapContainer" unique_id=497891409]
 tile_set = ExtResource("4_1fhut")
 
-[node name="Player" type="TileMapLayer" parent="MapContainer"]
+[node name="Player" type="TileMapLayer" parent="MapContainer" unique_id=783821701]
 tile_map_data = PackedByteArray("AAAAAAAADAAAAAAAAAAAAAEADAAAAAEAAAABAAAADAABAAAAAAABAAEADAABAAEAAAA=")
 tile_set = ExtResource("3_xtkmu")
 
-[node name="CutscenePath" parent="MapContainer" instance=ExtResource("5_a3lyo")]
+[node name="CutscenePath" parent="MapContainer" unique_id=1944539268 instance=ExtResource("5_a3lyo")]
 
-[node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
+[node name="GridSystem" type="Node" parent="." unique_id=184688997 node_paths=PackedStringArray("tile_map", "path_line")]
 script = ExtResource("5_2pnlr")
 tile_map = NodePath("../MapContainer/GridTile")
 path_line = NodePath("../MapContainer/CutscenePath")
 stage_data = ExtResource("2_wmg3m")
 
-[node name="GhostCursor" parent="." instance=ExtResource("6_xtyb8")]
+[node name="GhostCursor" parent="." unique_id=2125011495 instance=ExtResource("6_xtyb8")]
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=667827065 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_p7f1u")
 initial_state = NodePath("Idle")
 
-[node name="Dragging" type="Node" parent="StateMachine" node_paths=PackedStringArray("ghost_cursor", "held_visual")]
+[node name="Dragging" type="Node" parent="StateMachine" unique_id=435378128 node_paths=PackedStringArray("ghost_cursor", "held_visual")]
 script = ExtResource("8_m3uan")
 ghost_cursor = NodePath("../../GhostCursor")
 held_visual = NodePath("../../CanvasLayer/HeldVisual")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=962287572]
 script = ExtResource("9_gbpw8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1388501656]
 
-[node name="HeldVisual" parent="CanvasLayer" instance=ExtResource("10_q43gm")]
+[node name="HeldVisual" parent="CanvasLayer" unique_id=559647179 instance=ExtResource("10_q43gm")]
 position = Vector2(0, 1)
 
-[node name="LevelUI" type="Control" parent="CanvasLayer"]
+[node name="LevelUI" type="Control" parent="CanvasLayer" unique_id=1092340811]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_1d3k3")
 
-[node name="Description" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/LevelUI" unique_id=308243055]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
@@ -152,7 +152,7 @@ theme_override_fonts/normal_font = ExtResource("12_t32ah")
 bbcode_enabled = true
 fit_content = true
 
-[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/LevelUI" unique_id=172410980]
 clip_contents = false
 layout_mode = 0
 offset_top = 149.0
@@ -164,19 +164,17 @@ vertical_alignment = 1
 script = ExtResource("13_oclta")
 voice_sound = ExtResource("15_a3lyo")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_u8anr")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=206111745]
+libraries/ = SubResource("AnimationLibrary_u8anr")
 
-[node name="CursorLayer" parent="." instance=ExtResource("15_16md1")]
+[node name="CursorLayer" parent="." unique_id=700142805 instance=ExtResource("15_16md1")]
 
-[node name="PostProcess" parent="." instance=ExtResource("16_iryf8")]
+[node name="PostProcess" parent="." unique_id=622967952 instance=ExtResource("16_iryf8")]
 
-[node name="TransitionLayer" type="CanvasLayer" parent="."]
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=459560929]
 layer = 69
 
-[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
+[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer" unique_id=1938163551]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cya65lsp177sc"]
+[gd_scene format=4 uid="uid://cya65lsp177sc"]
 
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
@@ -72,85 +72,87 @@ _data = {
 &"fade_out": SubResource("Animation_qaxhb")
 }
 
-[node name="Day1Stage" type="Node2D" node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
+[node name="Day1Stage" type="Node2D" unique_id=971701877 node_paths=PackedStringArray("grid_system", "state_machine") groups=["LevelManager"]]
 script = ExtResource("1_tphfx")
+is_last_stage = null
 grid_system = NodePath("GridSystem")
 state_machine = NodePath("StateMachine")
 stage_data = ExtResource("2_xoslf")
 path_ratio = 0.7
+go_back = null
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1630183153]
 offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
 color = Color(0.0901961, 0.0666667, 0.101961, 1)
 
-[node name="MapContainer" type="Node2D" parent="."]
+[node name="MapContainer" type="Node2D" parent="." unique_id=479744137]
 position = Vector2(160, 32)
 
-[node name="Floor" type="TileMapLayer" parent="MapContainer"]
+[node name="Floor" type="TileMapLayer" parent="MapContainer" unique_id=373874612]
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAIAAAAAAAAAAQAAAAAAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAADAAIAAQABAAEAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAEAAQAAQABAAEAAAABAAIAAQABAAEAAAABAAMAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAADAAQAAQABAAEAAAACAAMAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAFAAMAAQABAAEAAAAGAAIAAQABAAEAAAAFAAIAAQABAAEAAAAEAAIAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAAHAAEAAQACAAEAAAAHAAIAAQACAAEAAAAHAAMAAQACAAEAAAAHAAQAAQACAAEAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQACAAIAAAAHAAAAAQACAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="Wall" type="TileMapLayer" parent="MapContainer"]
+[node name="Wall" type="TileMapLayer" parent="MapContainer" unique_id=1756360121]
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAADAAMAAAD//wMAAAAAAAEAAAD//wQAAAADAAEAAAD//wUAAAAAAAEAAAAIAAAAAAACAAEAAAAIAAEAAAACAAEAAAAIAAIAAAAFAAEAAAAIAAMAAAACAAEAAAAIAAQAAAACAAEAAAAIAAUADQAAAAAAAAAAAAYAAAABAAIAAAABAAYAAAABAAIAAAACAAYAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAIAAAAHAAYAAAABAAIAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAAAAAMAAAAFAP//AAABAAAAAAAGAP//AAAEAAAAAAAHAP//AAABAAAAAAAIAAYAAAACAAIAAAD//wYAAAAAAAIAAAAIAP//AAACAAAAAAD/////AAAAAAAAAAAEAAAAAAABAAMAAAAEAAEAAAACAAMAAAAAAAIAAAAFAAMAAAADAAEACgAAAAAAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="Goal" type="TileMapLayer" parent="MapContainer"]
+[node name="Goal" type="TileMapLayer" parent="MapContainer" unique_id=1600232544]
 tile_map_data = PackedByteArray("AAADAAEABgAAAAAAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="Object" type="TileMapLayer" parent="MapContainer"]
+[node name="Object" type="TileMapLayer" parent="MapContainer" unique_id=226980006]
 tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAADAAEABAAAAAAAAAAFAAAACAAAAAAAAAABAAUACwAAAAAAAAABAAYACwAAAAEAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="Object2" type="TileMapLayer" parent="MapContainer"]
+[node name="Object2" type="TileMapLayer" parent="MapContainer" unique_id=1165546022]
 tile_map_data = PackedByteArray("AAABAAUABQAAAAAAAAABAAYABQAAAAEAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="GridTile" type="TileMapLayer" parent="MapContainer"]
+[node name="GridTile" type="TileMapLayer" parent="MapContainer" unique_id=433043762]
 tile_set = ExtResource("3_kitjk")
 
-[node name="CutscenePath" parent="MapContainer" instance=ExtResource("5_xifu3")]
+[node name="CutscenePath" parent="MapContainer" unique_id=1341745819 instance=ExtResource("5_xifu3")]
 
-[node name="Player" type="TileMapLayer" parent="MapContainer"]
+[node name="Player" type="TileMapLayer" parent="MapContainer" unique_id=2098891664]
 tile_map_data = PackedByteArray("AAAAAAAADAAAAAAAAAAAAAEADAAAAAEAAAABAAAADAABAAAAAAABAAEADAABAAEAAAA=")
 tile_set = ExtResource("2_jg6dk")
 
-[node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
+[node name="GridSystem" type="Node" parent="." unique_id=762628868 node_paths=PackedStringArray("tile_map", "path_line")]
 script = ExtResource("1_yci7k")
 end_pos = Vector2i(3, 1)
 tile_map = NodePath("../MapContainer/GridTile")
 path_line = NodePath("../MapContainer/CutscenePath")
 stage_data = ExtResource("2_xoslf")
 
-[node name="GhostCursor" parent="." instance=ExtResource("1_4ueph")]
+[node name="GhostCursor" parent="." unique_id=1575189905 instance=ExtResource("1_4ueph")]
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=249334921 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_dbd7c")
 initial_state = NodePath("Idle")
 
-[node name="Dragging" type="Node" parent="StateMachine" node_paths=PackedStringArray("ghost_cursor", "held_visual")]
+[node name="Dragging" type="Node" parent="StateMachine" unique_id=1211104803 node_paths=PackedStringArray("ghost_cursor", "held_visual")]
 script = ExtResource("4_tphfx")
 ghost_cursor = NodePath("../../GhostCursor")
 held_visual = NodePath("../../CanvasLayer/HeldVisual")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=546988386]
 script = ExtResource("5_kitjk")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2042698362]
 
-[node name="HeldVisual" parent="CanvasLayer" instance=ExtResource("2_yci7k")]
+[node name="HeldVisual" parent="CanvasLayer" unique_id=451671361 instance=ExtResource("2_yci7k")]
 position = Vector2(0, 1)
 
-[node name="LevelUI" type="Control" parent="CanvasLayer"]
+[node name="LevelUI" type="Control" parent="CanvasLayer" unique_id=382823080]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_t0qmm")
 
-[node name="Description" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/LevelUI" unique_id=1610815373]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
@@ -160,7 +162,7 @@ theme_override_fonts/normal_font = ExtResource("12_micd6")
 bbcode_enabled = true
 fit_content = true
 
-[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/LevelUI" unique_id=1665745604]
 clip_contents = false
 layout_mode = 0
 offset_top = 149.0
@@ -172,19 +174,17 @@ vertical_alignment = 1
 script = ExtResource("13_0he0g")
 voice_sound = ExtResource("15_xifu3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_u8anr")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1457030764]
+libraries/ = SubResource("AnimationLibrary_u8anr")
 
-[node name="CursorLayer" parent="." instance=ExtResource("13_xoslf")]
+[node name="CursorLayer" parent="." unique_id=521674620 instance=ExtResource("13_xoslf")]
 
-[node name="PostProcess" parent="." instance=ExtResource("14_t0qmm")]
+[node name="PostProcess" parent="." unique_id=1518514874 instance=ExtResource("14_t0qmm")]
 
-[node name="TransitionLayer" type="CanvasLayer" parent="."]
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=191104867]
 layer = 69
 
-[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
+[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer" unique_id=1401157785]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
