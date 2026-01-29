@@ -3,7 +3,7 @@ extends Control
 @onready var animation_player = $AnimationPlayer
 @onready var start_button = $Content/VBoxContainer2/VBoxContainer/Start
 @onready var quit_button = $Content/VBoxContainer2/VBoxContainer/Quit
-@onready var transition_overlay = $TransitionOverlay
+@onready var transition_overlay = $TransitionLayer/TransitionOverlay
 
 # The scene you want to load
 @export_file("*.tscn") var start_scene_path: String

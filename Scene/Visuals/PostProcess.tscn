@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyu1hv5nm6l0s"]
+
+[ext_resource type="Shader" uid="uid://c440c8wmd6yhu" path="res://Shaders/PostProcess.gdshader" id="1_ctiep"]
+[ext_resource type="Script" uid="uid://nenxpb3h7n4d" path="res://Scripts/Visuals/PostProcessRect.gd" id="2_abitp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abitp"]
+shader = ExtResource("1_ctiep")
+shader_parameter/palette = PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/palette_size = 16
+
+[node name="PostProcess" type="CanvasLayer"]
+layer = 67
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_abitp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_abitp")

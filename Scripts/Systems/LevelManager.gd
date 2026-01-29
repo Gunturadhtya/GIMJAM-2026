@@ -9,7 +9,7 @@ class_name LevelManager extends Node2D
 	
 @onready var ui = $CanvasLayer/LevelUI 
 @onready var animation_player = $AnimationPlayer
-@onready var transition_overlay = $TransitionOverlay
+@onready var transition_overlay = $TransitionLayer/TransitionOverlay
 
 var current_trash_count: int = 0
 

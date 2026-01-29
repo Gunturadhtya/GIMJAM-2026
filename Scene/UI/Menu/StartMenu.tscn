@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://e56el7surqpk"]
+[gd_scene load_steps=16 format=4 uid="uid://e56el7surqpk"]
 
 [ext_resource type="Script" uid="uid://cd5air2ugbj5" path="res://Scripts/UI/StartMenu.gd" id="1_e7jyp"]
 [ext_resource type="Texture2D" uid="uid://dxw6hs1i3esfy" path="res://Assets/ui/title.png" id="1_eqr7c"]
 [ext_resource type="Script" uid="uid://chwkxnwqivwp8" path="res://Scripts/UI/UnderlineButton.gd" id="2_mhu6m"]
 [ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="4_qaxhb"]
+[ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="5_u8anr"]
 
 [sub_resource type="Image" id="Image_mhu6m"]
 data = {
@@ -190,7 +191,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/path = NodePath("TransitionLayer/TransitionOverlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -206,7 +207,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/path = NodePath("TransitionLayer/TransitionOverlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -222,7 +223,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/path = NodePath("TransitionLayer/TransitionOverlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -335,8 +336,19 @@ underline_color = Color(0.960784, 0.937255, 0.909804, 1)
 line_thickness = 1.0
 metadata/_custom_type_script = "uid://chwkxnwqivwp8"
 
-[node name="TransitionOverlay" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u8anr")
+}
+
+[node name="CursorLayer" parent="." instance=ExtResource("4_qaxhb")]
+
+[node name="PostProcess" parent="." instance=ExtResource("5_u8anr")]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 69
+
+[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -345,10 +357,4 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_u8anr")
-}
-
-[node name="CursorLayer" parent="." instance=ExtResource("4_qaxhb")]
+metadata/_edit_use_anchors_ = true

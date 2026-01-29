@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://6xjgyqr8knbx"]
+[gd_scene load_steps=19 format=4 uid="uid://6xjgyqr8knbx"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ek7bl"]
 [ext_resource type="Resource" uid="uid://c34wdo7mibup8" path="res://Data/Stage/Day4.tres" id="2_ek7bl"]
@@ -13,13 +13,14 @@
 [ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="11_0kjmh"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_qngi5"]
 [ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="13_dcp87"]
+[ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="14_3rwpp"]
 
 [sub_resource type="Animation" id="Animation_e7jyp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/path = NodePath("TransitionLayer/TransitionOverlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,7 +36,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/path = NodePath("TransitionLayer/TransitionOverlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,7 +52,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionOverlay:modulate")
+tracks/0/path = NodePath("TransitionLayer/TransitionOverlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -89,6 +90,10 @@ tile_set = ExtResource("3_3rwpp")
 
 [node name="Wall" type="TileMapLayer" parent="MapContainer"]
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wIAAAADAAMAAAD//wMAAAAAAAEAAAD//wQAAAADAAEAAAD//wUAAAAAAAEAAAAIAAAAAAACAAEAAAAIAAEAAAACAAEAAAAIAAIAAAAFAAEAAAAIAAMAAAACAAEAAAAIAAQAAAAEAAEAAAAIAAUAAAACAAEAAAAAAAYAAAABAAIAAAABAAYAAAABAAIAAAACAAYAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAIAAAAHAAYAAAABAAIAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAAAAAMAAAAFAP//AAABAAAAAAAGAP//AAAEAAAAAAAHAP//AAABAAAAAAAIAAYAAAACAAIAAAD//wYAAAAAAAIAAAAIAP//AAACAAAAAAD/////AAAAAAAAAAAEAAAAAAABAAMAAAAEAAEAAAACAAMAAAAAAAIAAAAFAAMAAAA=")
+tile_set = ExtResource("3_3rwpp")
+
+[node name="Object" type="TileMapLayer" parent="MapContainer"]
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAEAAAABAAAAAgABAAAAAAABAAEAAgABAAEAAAACAAAAAwAAAAAAAAADAAAAAwABAAAAAAA=")
 tile_set = ExtResource("3_3rwpp")
 
 [node name="GridTile" type="TileMapLayer" parent="MapContainer"]
@@ -139,7 +144,19 @@ theme_override_fonts/normal_font = ExtResource("12_qngi5")
 bbcode_enabled = true
 fit_content = true
 
-[node name="TransitionOverlay" type="ColorRect" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u8anr")
+}
+
+[node name="CursorLayer" parent="." instance=ExtResource("13_dcp87")]
+
+[node name="PostProcess" parent="." instance=ExtResource("14_3rwpp")]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 69
+
+[node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -148,10 +165,3 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_u8anr")
-}
-
-[node name="CursorLayer" parent="." instance=ExtResource("13_dcp87")]
