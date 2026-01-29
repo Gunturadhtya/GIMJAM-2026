@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckucgsh1widvv"]
+
+[ext_resource type="Texture2D" uid="uid://biqw6igf8838v" path="res://Assets/ui/hand_cursor.png" id="1_oaomo"]
+[ext_resource type="Script" uid="uid://dui35ntlu5ds6" path="res://Scripts/UI/Cursor.gd" id="2_arhe2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arhe2"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i766m"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6p54"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p53g"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjygo"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qt0c"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oun0v"]
+atlas = ExtResource("1_oaomo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oun0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arhe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i766m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6p54")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p53g")
+}],
+"loop": true,
+"name": &"grab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjygo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qt0c")
+}],
+"loop": false,
+"name": &"hold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oun0v")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CursorLayer" type="CanvasLayer"]
+
+[node name="Cursor" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oun0v")
+animation = &"idle"
+script = ExtResource("2_arhe2")

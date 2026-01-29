@@ -136,6 +136,12 @@ func get_item(clicked_pos: Vector2i) -> TrashShape:
 	redraw_path()
 	return item_to_pickup
 
+func check_item(hovered_pos):
+	if not occupied_cell.has(hovered_pos):
+		return null
+	
+	return true
+
 # --- Helpers ---
 
 func is_area_valid(origin: Vector2i, offsets: Array[Vector2i]) -> bool:

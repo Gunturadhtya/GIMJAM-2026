@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://6xjgyqr8knbx"]
+[gd_scene load_steps=18 format=4 uid="uid://6xjgyqr8knbx"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ek7bl"]
 [ext_resource type="Resource" uid="uid://c34wdo7mibup8" path="res://Data/Stage/Day4.tres" id="2_ek7bl"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="10_0rc63"]
 [ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="11_0kjmh"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_qngi5"]
+[ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="13_dcp87"]
 
 [sub_resource type="Animation" id="Animation_e7jyp"]
 length = 0.001
@@ -152,3 +153,5 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_u8anr")
 }
+
+[node name="CursorLayer" parent="." instance=ExtResource("13_dcp87")]

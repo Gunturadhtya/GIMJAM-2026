@@ -11,6 +11,8 @@ extends PlayerState
 @export var max_sway_angle: float = 25.0
 @export var recovery_speed: float = 8.0
 
+@onready var cursor: AnimatedSprite2D = $"../../CursorLayer/Cursor"
+
 var current_trash: TrashShape
 var is_valid_drop: bool
 var current_grid_pos := Vector2i.ZERO
@@ -27,6 +29,8 @@ func enter(_previous_state_path: String, data := {}) -> void:
 	held_visual.setup(current_trash)
 	held_visual.global_position = level.get_global_mouse_position()
 	held_visual.rotation_degrees = 0.0
+	
+	cursor.play_hold()
 	
 	current_sway = 0.0
 	print("State: Dragging")
@@ -74,6 +78,7 @@ func _attempt_place_item():
 		current_trash.last_rotated_degree = current_trash.get_rotation()
 		level.current_trash_count += 1
 		level.grid_system.place_item(current_grid_pos, current_trash)
+		cursor.play_idle()
 		finished.emit("Idle") 
 	else:
 		_stop_dragging()
@@ -88,6 +93,7 @@ func _stop_dragging():
 	current_trash.last_rotated_degree = current_trash.get_rotation()
 	level.current_trash_count += 1
 	level.grid_system.place_item(current_trash.get_last_origin(), current_trash)
+	cursor.play_idle()
 	finished.emit("Idle")
 
 func _update_ghost_visual():

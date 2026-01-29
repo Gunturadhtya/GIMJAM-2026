@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://e56el7surqpk"]
+[gd_scene load_steps=15 format=4 uid="uid://e56el7surqpk"]
 
 [ext_resource type="Script" uid="uid://cd5air2ugbj5" path="res://Scripts/UI/StartMenu.gd" id="1_e7jyp"]
 [ext_resource type="Texture2D" uid="uid://dxw6hs1i3esfy" path="res://Assets/ui/title.png" id="1_eqr7c"]
 [ext_resource type="Script" uid="uid://chwkxnwqivwp8" path="res://Scripts/UI/UnderlineButton.gd" id="2_mhu6m"]
+[ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="4_qaxhb"]
 
 [sub_resource type="Image" id="Image_mhu6m"]
 data = {
@@ -349,3 +350,5 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_u8anr")
 }
+
+[node name="CursorLayer" parent="." instance=ExtResource("4_qaxhb")]
