@@ -6,20 +6,18 @@ func update_visuals(shape: TrashShape):
 	for child in get_children():
 		child.queue_free()
 	
-	var atlas = PNGToAtlas.new()
-	atlas.setup(shape.texture)
-	
 	var i = 0
 	for offset in shape.offset:
 		var sprite = Sprite2D.new()
-		sprite.texture = atlas.get_item_icon(shape.atlas_coords[i].x, shape.atlas_coords[i].y,1,1)
-		sprite.rotation_degrees = shape.get_rotation()
-		#print(shape.get_rotation())
+		sprite.texture = load("res://Assets/ui/tile_highlight.png")
+		sprite.hframes = 2
+		sprite.vframes = 1
+		sprite.frame = 1
 		sprite.position = Vector2(offset) * CELL_SIZE
-		sprite.modulate.a = 0.5
-		i += 1
+		sprite.modulate.a = 1.0 
 		add_child(sprite)
 
-
 func set_color_status(is_valid: bool):
-	self.modulate = Color.GREEN if is_valid else Color.RED
+	var target_color = Color.WHITE if is_valid else Color.RED
+	for child in get_children():
+		child.modulate = target_color
