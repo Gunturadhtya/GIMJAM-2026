@@ -38,6 +38,11 @@ func run_sequence(astar_points: Array[Vector2], stop_ratio: float, do_return: bo
 			sprite.position = Vector2(7.0, 0.0)
 			sprite.play("scene_day4")
 			await sprite.animation_finished
+		5:
+			sprite.rotation_degrees = 0
+			sprite.position = Vector2(-0.0, 7.0)
+			sprite.play("scene_day5")
+			await sprite.animation_finished
 	
 	if do_return:
 		sprite.flip_v = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bkkxgn7dpv6cg"]
+[gd_scene load_steps=52 format=3 uid="uid://bkkxgn7dpv6cg"]
 
 [ext_resource type="Script" uid="uid://iv0wof6qcg8o" path="res://Scripts/StoryTelling/CutscenePath.gd" id="1_s214m"]
 [ext_resource type="Texture2D" uid="uid://d0mh34liiua4c" path="res://Assets/rafi/char_rafi-sheet.png" id="2_qonyh"]
@@ -144,6 +144,38 @@ region = Rect2(288, 256, 48, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3bw2"]
 atlas = ExtResource("2_qonyh")
 region = Rect2(336, 256, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnuar"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1dqy"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(48, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkpbh"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(96, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6ac1"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(144, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vsu"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(192, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4xdf"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(240, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uodkb"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(288, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6dfi"]
+atlas = ExtResource("2_qonyh")
+region = Rect2(336, 320, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eijvi"]
 atlas = ExtResource("2_qonyh")
@@ -295,6 +327,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bnuar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1dqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkpbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6ac1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4xdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uodkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6dfi")
+}],
+"loop": false,
+"name": &"scene_day5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_eijvi")
 }, {
 "duration": 1.0,
@@ -320,4 +381,4 @@ script = ExtResource("1_s214m")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_bnuar")
-animation = &"scene_day1"
+animation = &"scene_day5"
