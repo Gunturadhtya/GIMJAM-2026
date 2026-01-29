@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StageData" load_steps=29 format=3 uid="uid://q50arvmrv1tg"]
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://q50arvmrv1tg"]
 
 [ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_yh488"]
 [ext_resource type="AudioStream" uid="uid://dbeqhn2dvfiey" path="res://Assets/sfx/Paper_Place.mp3" id="2_48y60"]
@@ -26,11 +26,7 @@
 script = ExtResource("1_yh488")
 atlas_id = 11
 texture = ExtResource("5_muej2")
-atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
-offset = Array[Vector2i]([Vector2i(0, 0)])
-_rotated_degree = 0
 _last_origin = Vector2i(1, 1)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("3_hfix3")
 sfx_place = ExtResource("2_48y60")
 sfx_take = ExtResource("4_p7us7")
@@ -42,9 +38,6 @@ atlas_id = 14
 texture = ExtResource("9_lgv0j")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
-_rotated_degree = 0
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("7_5kgrn")
 sfx_place = ExtResource("6_w43m3")
 sfx_take = ExtResource("8_0fu8f")
@@ -54,11 +47,7 @@ metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 script = ExtResource("1_yh488")
 atlas_id = 12
 texture = ExtResource("10_w41ce")
-atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
-offset = Array[Vector2i]([Vector2i(0, 0)])
-_rotated_degree = 0
 _last_origin = Vector2i(1, 1)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("7_5kgrn")
 sfx_place = ExtResource("6_w43m3")
 sfx_take = ExtResource("8_0fu8f")
@@ -70,9 +59,6 @@ atlas_id = 16
 texture = ExtResource("11_i4g13")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)])
-_rotated_degree = 0
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("7_5kgrn")
 sfx_place = ExtResource("6_w43m3")
 sfx_take = ExtResource("8_0fu8f")
@@ -85,8 +71,6 @@ texture = ExtResource("20_qw5pt")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
 _rotated_degree = 270
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("18_bgnmp")
 sfx_place = ExtResource("17_iuegr")
 sfx_take = ExtResource("19_a2c8h")
@@ -99,8 +83,6 @@ texture = ExtResource("12_l84b5")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 _rotated_degree = 90
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("7_5kgrn")
 sfx_place = ExtResource("6_w43m3")
 sfx_take = ExtResource("8_0fu8f")
@@ -113,8 +95,6 @@ texture = ExtResource("16_fyubl")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 _rotated_degree = 90
-_last_origin = Vector2i(0, 0)
-last_rotated_degree = 0
 sfx_rotate = ExtResource("14_m2moj")
 sfx_place = ExtResource("13_apj66")
 sfx_take = ExtResource("15_n12w6")
