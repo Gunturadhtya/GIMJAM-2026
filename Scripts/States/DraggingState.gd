@@ -78,6 +78,7 @@ func _attempt_place_item():
 		current_trash.last_rotated_degree = current_trash.get_rotation()
 		level.current_trash_count += 1
 		level.grid_system.place_item(current_grid_pos, current_trash)
+		AudioManager.play_place_sfx(current_trash.sfx_place)
 		cursor.play_idle()
 		finished.emit("Idle") 
 	else:
@@ -93,6 +94,7 @@ func _stop_dragging():
 	current_trash.last_rotated_degree = current_trash.get_rotation()
 	level.current_trash_count += 1
 	level.grid_system.place_item(current_trash.get_last_origin(), current_trash)
+	AudioManager.play_place_sfx(current_trash.sfx_place)
 	cursor.play_idle()
 	finished.emit("Idle")
 

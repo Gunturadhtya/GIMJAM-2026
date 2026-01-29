@@ -8,18 +8,24 @@ class_name TrashShape extends Resource
 @export var _last_origin: Vector2i = Vector2.ZERO
 @export var last_rotated_degree: int = 0
 
+@export var sfx_rotate: AudioStream
+@export var sfx_place: AudioStream
+@export var sfx_take: AudioStream
+
 func rotate():
 	var new_offsets: Array[Vector2i] = []
 	for points in offset:
 		new_offsets.append(Vector2i(-points.y, points.x))
 	offset = new_offsets
 	set_rotation((_rotated_degree + 90) % 360)
-
-func get_copy() -> TrashShape:
-	var copy = self.duplicate(true)
-	copy.offset = offset.duplicate()
-	copy.set_degree(_rotated_degree)
-	return copy
+	AudioManager.play_rotate_sfx(sfx_rotate)
+#
+#func get_copy() -> TrashShape:
+	#var copy = self.duplicate(true)
+	#copy.offset = offset.duplicate()
+	#copy.set_degree(_rotated_degree)
+	#
+	#return copy
 
 func get_last_origin():
 	return _last_origin

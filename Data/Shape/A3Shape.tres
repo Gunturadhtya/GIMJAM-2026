@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TrashShape" load_steps=6 format=3 uid="uid://bwfo0ixff4nfx"]
+
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_6ibya"]
+[ext_resource type="Texture2D" uid="uid://p2rnij4d6ari" path="res://Assets/junk/a/junk_a_3.png" id="2_6ibya"]
+[ext_resource type="AudioStream" uid="uid://b7rurwjcm2lkr" path="res://Assets/sfx/Plastic_Place.mp3" id="2_cnmay"]
+[ext_resource type="AudioStream" uid="uid://kgmnyvg2t4dt" path="res://Assets/sfx/Plastic_Rotate.mp3" id="3_nooq6"]
+[ext_resource type="AudioStream" uid="uid://dasqfpypgqw8n" path="res://Assets/sfx/Plastic_Take.mp3" id="4_rtbjy"]
+
+[resource]
+script = ExtResource("1_6ibya")
+atlas_id = 13
+texture = ExtResource("2_6ibya")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0)])
+_rotated_degree = 0
+_last_origin = Vector2i(1, 1)
+last_rotated_degree = 0
+sfx_rotate = ExtResource("3_nooq6")
+sfx_place = ExtResource("2_cnmay")
+sfx_take = ExtResource("4_rtbjy")
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"

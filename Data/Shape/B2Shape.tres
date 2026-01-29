@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TrashShape" load_steps=6 format=3 uid="uid://cbdia2gr5ogfm"]
+
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_8beil"]
+[ext_resource type="Texture2D" uid="uid://u3bspdi2ex6o" path="res://Assets/junk/b/junk_b_2.png" id="2_8beil"]
+[ext_resource type="AudioStream" uid="uid://cg0stwqo1q5t4" path="res://Assets/sfx/Kardus_Place.mp3" id="2_ilsbl"]
+[ext_resource type="AudioStream" uid="uid://crdkgn5nl26yy" path="res://Assets/sfx/Kardus_rotate.mp3" id="3_hnaud"]
+[ext_resource type="AudioStream" uid="uid://egjfn4hon0m6" path="res://Assets/sfx/Kardus_Take.mp3" id="4_4pouv"]
+
+[resource]
+script = ExtResource("1_8beil")
+atlas_id = 15
+texture = ExtResource("2_8beil")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
+_rotated_degree = 0
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+sfx_rotate = ExtResource("3_hnaud")
+sfx_place = ExtResource("2_ilsbl")
+sfx_take = ExtResource("4_4pouv")
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"

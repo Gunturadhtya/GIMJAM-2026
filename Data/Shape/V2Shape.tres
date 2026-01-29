@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TrashShape" load_steps=6 format=3 uid="uid://dl2f413ktow33"]
+
+[ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_s0xhs"]
+[ext_resource type="AudioStream" uid="uid://b7rurwjcm2lkr" path="res://Assets/sfx/Plastic_Place.mp3" id="2_s0xhs"]
+[ext_resource type="AudioStream" uid="uid://kgmnyvg2t4dt" path="res://Assets/sfx/Plastic_Rotate.mp3" id="3_rotmp"]
+[ext_resource type="AudioStream" uid="uid://dasqfpypgqw8n" path="res://Assets/sfx/Plastic_Take.mp3" id="4_7trs2"]
+[ext_resource type="Texture2D" uid="uid://doamxeslcglxc" path="res://Assets/junk/v/junk_v_2.png" id="5_gof3y"]
+
+[resource]
+script = ExtResource("1_s0xhs")
+atlas_id = 20
+texture = ExtResource("5_gof3y")
+atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1)])
+_rotated_degree = 0
+_last_origin = Vector2i(0, 0)
+last_rotated_degree = 0
+sfx_rotate = ExtResource("3_rotmp")
+sfx_place = ExtResource("2_s0xhs")
+sfx_take = ExtResource("4_7trs2")
+metadata/_custom_type_script = "uid://cnbjqq33c46o2"

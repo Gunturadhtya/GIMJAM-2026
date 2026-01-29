@@ -1,15 +1,21 @@
-[gd_resource type="Resource" script_class="TrashShape" load_steps=3 format=3 uid="uid://8veecebc6stn"]
+[gd_resource type="Resource" script_class="TrashShape" load_steps=6 format=3 uid="uid://8veecebc6stn"]
 
 [ext_resource type="Script" uid="uid://cnbjqq33c46o2" path="res://Scripts/TrashShape.gd" id="1_nx2a8"]
-[ext_resource type="Texture2D" uid="uid://bhqo6fpnrrrbt" path="res://Assets/junk_c_1.png" id="2_rt8me"]
+[ext_resource type="AudioStream" uid="uid://3mrhrq0we1r8" path="res://Assets/sfx/Kain_Place.mp3" id="2_lb7p6"]
+[ext_resource type="AudioStream" uid="uid://cqjeodcdxgjrx" path="res://Assets/sfx/Kain_Rotate.mp3" id="3_vmn8j"]
+[ext_resource type="AudioStream" uid="uid://u3e7310r3ah5" path="res://Assets/sfx/Kain_Take.mp3" id="4_veg6k"]
+[ext_resource type="Texture2D" uid="uid://bmpcq45i0rj18" path="res://Assets/junk/c/junk_c_1.png" id="5_iyqpx"]
 
 [resource]
 script = ExtResource("1_nx2a8")
 atlas_id = 6
-texture = ExtResource("2_rt8me")
+texture = ExtResource("5_iyqpx")
 atlas_coords = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 offset = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)])
 _rotated_degree = 90
 _last_origin = Vector2i(0, 0)
 last_rotated_degree = 0
+sfx_rotate = ExtResource("3_vmn8j")
+sfx_place = ExtResource("2_lb7p6")
+sfx_take = ExtResource("4_veg6k")
 metadata/_custom_type_script = "uid://cnbjqq33c46o2"

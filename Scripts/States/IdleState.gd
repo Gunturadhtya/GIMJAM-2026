@@ -28,6 +28,7 @@ func _handle_click():
 	
 	if selected_item != null:
 		level.current_trash_count -= 1
+		AudioManager.play_take_sfx(selected_item.sfx_take)
 		level.grid_system.grid_updated.emit()
 		finished.emit("Dragging", {"trash" : selected_item})
 	else:

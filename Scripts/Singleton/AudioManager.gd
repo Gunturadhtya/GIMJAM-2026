@@ -41,5 +41,15 @@ func play_voice_blip(stream: AudioStream, pitch: float = 1.0):
 	p.finished.connect(p.queue_free)
 	p.play()
 
+func play_take_sfx(stream: AudioStream):
+	play_sfx(stream, 0.0, 1.1) 
+
+func play_rotate_sfx(stream: AudioStream):
+	var random_pitch = randf_range(0.95, 1.05)
+	play_sfx(stream, -2.0, random_pitch)
+
+func play_place_sfx(stream: AudioStream):
+	play_sfx(stream, 0.0, 0.9)
+
 func stop_bgm():
 	bgm_player.stop()
