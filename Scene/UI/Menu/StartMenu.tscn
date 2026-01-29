@@ -304,22 +304,6 @@ underline_color = Color(0.960784, 0.937255, 0.909804, 1)
 line_thickness = 1.0
 metadata/_custom_type_script = "uid://chwkxnwqivwp8"
 
-[node name="Settings" type="Button" parent="Content/VBoxContainer2/VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-theme_override_colors/font_hover_color = Color(0.960784, 0.937255, 0.909804, 1)
-theme_override_colors/font_color = Color(0.670588, 0.6, 0.643137, 1)
-theme_override_fonts/font = SubResource("FontFile_u8anr")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mhu6m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_e7jyp")
-text = "Settings"
-flat = true
-alignment = 0
-script = ExtResource("2_mhu6m")
-underline_color = Color(0.960784, 0.937255, 0.909804, 1)
-line_thickness = 1.0
-metadata/_custom_type_script = "uid://chwkxnwqivwp8"
-
 [node name="Quit" type="Button" parent="Content/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
