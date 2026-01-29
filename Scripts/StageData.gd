@@ -1,6 +1,7 @@
 class_name StageData extends Resource
 
 @export var title: String = "Title"
+@export var day: int = 67
 @export_file("*.tscn") var next_scene: String
 @export_multiline var description: String = ""
 @export_multiline var goal: String = ""

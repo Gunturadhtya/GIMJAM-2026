@@ -123,6 +123,7 @@ metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 [resource]
 script = ExtResource("3_nomhw")
 title = "[u]The Notice[/u]"
+day = 2
 next_scene = "uid://dfgy5qtx4mosq"
 description = "A white paper slid under the door. it could be an eviction notice."
 goal = "Clear a path to the paper slipped under the door."

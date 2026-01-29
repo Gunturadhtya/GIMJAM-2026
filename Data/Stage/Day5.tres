@@ -152,10 +152,11 @@ metadata/_custom_type_script = "uid://cnbjqq33c46o2"
 [resource]
 script = ExtResource("24_o8dji")
 title = "[u]The Outside[/u]"
+day = 5
 next_scene = "uid://e56el7surqpk"
 description = "He's Ready."
 goal = "Clear the way to the door"
-trash_goal = 10
+trash_goal = 9
 grid_content = Dictionary[Vector2i, ExtResource("1_1j5sr")]({
 Vector2i(0, 5): SubResource("Resource_ehmpk"),
 Vector2i(2, 3): SubResource("Resource_arn8p"),

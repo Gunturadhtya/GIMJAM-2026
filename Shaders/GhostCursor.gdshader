@@ -6,7 +6,7 @@ uniform float line_thickness : hint_range(0, 10) = 2;
 void fragment() {
     vec2 size = TEXTURE_PIXEL_SIZE * line_thickness;
     vec4 current_pixel = texture(TEXTURE, UV);
-    
+
     float a_up    = texture(TEXTURE, UV + vec2(0, -size.y)).a;
     float a_down  = texture(TEXTURE, UV + vec2(0, size.y)).a;
     float a_left  = texture(TEXTURE, UV + vec2(-size.x, 0)).a;

@@ -17,7 +17,7 @@ const TILE_ROTATIONS = [
 
 @export_group("References")
 @export var tile_map: TileMapLayer
-@export var path_line: Line2D
+@export var path_line: Path2D
 @export var stage_data: StageData
 
 # --- State ---
@@ -159,12 +159,15 @@ func check_path() -> bool:
 	return not astar.get_id_path(start_pos, end_pos).is_empty()
 
 func redraw_path() -> bool:
-	path_line.clear_points()
+	var curve = path_line.get_curve()
+	curve.clear_points()
+	
 	var path = astar.get_id_path(start_pos, end_pos)
 	
 	if path.is_empty():
 		return false
 	
 	for point in path:
-		path_line.add_point(tile_map.map_to_local(point))
+		curve.add_point(tile_map.map_to_local(point))
+	
 	return true

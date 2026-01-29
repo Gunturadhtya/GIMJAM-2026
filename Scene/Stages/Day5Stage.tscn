@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=4 uid="uid://cmjwjn24b10gl"]
+[gd_scene load_steps=22 format=4 uid="uid://cmjwjn24b10gl"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_wmg3m"]
 [ext_resource type="Resource" uid="uid://cqo4ujusve2lr" path="res://Data/Stage/Day5.tres" id="2_wmg3m"]
 [ext_resource type="TileSet" uid="uid://c2b85kq11pwdo" path="res://Assets/tilemap/BackgroundTileset.tres" id="3_xtkmu"]
 [ext_resource type="TileSet" uid="uid://cj36eij5p3d7n" path="res://Assets/tilemap/GameTileSet.tres" id="4_1fhut"]
 [ext_resource type="Script" uid="uid://by2bhkwwgsuev" path="res://Scripts/Systems/GridSystems.gd" id="5_2pnlr"]
+[ext_resource type="PackedScene" uid="uid://bkkxgn7dpv6cg" path="res://Scene/Storytellling/CutscenePath.tscn" id="5_a3lyo"]
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="6_xtyb8"]
 [ext_resource type="Script" uid="uid://dobg6xdxrtlld" path="res://Scripts/FSM/StateMachine.gd" id="7_p7f1u"]
 [ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="8_m3uan"]
@@ -76,6 +77,7 @@ script = ExtResource("1_wmg3m")
 grid_system = NodePath("GridSystem")
 state_machine = NodePath("StateMachine")
 stage_data = ExtResource("2_wmg3m")
+path_ratio = 0.99
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 320.0
@@ -101,12 +103,16 @@ tile_set = ExtResource("3_xtkmu")
 [node name="GridTile" type="TileMapLayer" parent="MapContainer"]
 tile_set = ExtResource("4_1fhut")
 
-[node name="AstarLine" type="Line2D" parent="MapContainer"]
+[node name="Player" type="TileMapLayer" parent="MapContainer"]
+tile_map_data = PackedByteArray("AAAAAAAADAAAAAAAAAAAAAEADAAAAAEAAAABAAAADAABAAAAAAABAAEADAABAAEAAAA=")
+tile_set = ExtResource("3_xtkmu")
+
+[node name="CutscenePath" parent="MapContainer" instance=ExtResource("5_a3lyo")]
 
 [node name="GridSystem" type="Node" parent="." node_paths=PackedStringArray("tile_map", "path_line")]
 script = ExtResource("5_2pnlr")
 tile_map = NodePath("../MapContainer/GridTile")
-path_line = NodePath("../MapContainer/AstarLine")
+path_line = NodePath("../MapContainer/CutscenePath")
 stage_data = ExtResource("2_wmg3m")
 
 [node name="GhostCursor" parent="." instance=ExtResource("6_xtyb8")]
@@ -165,11 +171,9 @@ libraries = {
 [node name="CursorLayer" parent="." instance=ExtResource("15_16md1")]
 
 [node name="PostProcess" parent="." instance=ExtResource("16_iryf8")]
-visible = false
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 layer = 69
-visible = false
 
 [node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
 anchors_preset = 15
