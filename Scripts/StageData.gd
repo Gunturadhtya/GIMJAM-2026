@@ -6,3 +6,4 @@ class_name StageData extends Resource
 @export_multiline var goal: String = ""
 @export var trash_goal: int = 0
 @export var grid_content: Dictionary[Vector2i, TrashShape]
+@export var dialogue: Array[String]

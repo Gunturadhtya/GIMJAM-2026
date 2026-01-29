@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cya65lsp177sc"]
+[gd_scene load_steps=21 format=4 uid="uid://cya65lsp177sc"]
 
 [ext_resource type="PackedScene" uid="uid://bp3y6ykiubwmw" path="res://Scene/Visuals/GhostCursor.tscn" id="1_4ueph"]
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_tphfx"]
@@ -11,9 +11,11 @@
 [ext_resource type="Script" uid="uid://cgk7eqe5tukgv" path="res://Scripts/States/DraggingState.gd" id="4_tphfx"]
 [ext_resource type="Script" uid="uid://blw7bnok6qkbj" path="res://Scripts/States/IdleState.gd" id="5_kitjk"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_micd6"]
+[ext_resource type="Script" uid="uid://m6e7qn473y1a" path="res://Scripts/StoryTelling/Dialogue.gd" id="13_0he0g"]
 [ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="13_t0qmm"]
 [ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="13_xoslf"]
 [ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="14_t0qmm"]
+[ext_resource type="AudioStream" uid="uid://bq1xpuartmvye" path="res://Assets/Bip/Bip_Rafi_New.mp3" id="14_xabwx"]
 
 [sub_resource type="Animation" id="Animation_e7jyp"]
 length = 0.001
@@ -144,6 +146,18 @@ theme_override_fonts/normal_font = ExtResource("12_micd6")
 bbcode_enabled = true
 fit_content = true
 
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
+clip_contents = false
+layout_mode = 0
+offset_top = 149.0
+offset_right = 320.0
+offset_bottom = 181.0
+theme_override_fonts/normal_font = ExtResource("12_micd6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_0he0g")
+voice_sound = ExtResource("14_xabwx")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_u8anr")
@@ -152,9 +166,11 @@ libraries = {
 [node name="CursorLayer" parent="." instance=ExtResource("13_xoslf")]
 
 [node name="PostProcess" parent="." instance=ExtResource("14_t0qmm")]
+visible = false
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
 layer = 69
+visible = false
 
 [node name="TransitionOverlay" type="ColorRect" parent="TransitionLayer"]
 anchors_preset = 15

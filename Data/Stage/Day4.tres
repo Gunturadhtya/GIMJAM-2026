@@ -138,4 +138,5 @@ Vector2i(5, 5): SubResource("Resource_77nyi"),
 Vector2i(6, 0): SubResource("Resource_njcst"),
 Vector2i(7, 0): SubResource("Resource_d0ffr")
 })
+dialogue = Array[String](["What is this?", "Oh, |0.3| her camera|0.4|.|0.4|.|0.4|.", "Her photos were always so good", "I'm glad I could buy this for her"])
 metadata/_custom_type_script = "uid://byo78viqn3s5q"

@@ -21,6 +21,9 @@ func handle_input(_event: InputEvent):
 		_handle_click()
 
 func _handle_click():
+	if Global.is_dialogue_active:
+		return
+	
 	var selected_item = level.grid_system.get_item(current_grid_pos)
 	
 	if selected_item != null:

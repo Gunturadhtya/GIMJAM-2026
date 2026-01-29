@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://6xjgyqr8knbx"]
+[gd_scene load_steps=21 format=4 uid="uid://6xjgyqr8knbx"]
 
 [ext_resource type="Script" uid="uid://cbqvi30stts4h" path="res://Scripts/Systems/LevelManager.gd" id="1_ek7bl"]
 [ext_resource type="Resource" uid="uid://c34wdo7mibup8" path="res://Data/Stage/Day4.tres" id="2_ek7bl"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://d37vk4ylg16pb" path="res://Scene/Visuals/HeldVisual.tscn" id="10_0rc63"]
 [ext_resource type="Script" uid="uid://ci2magjkhqlyc" path="res://Scripts/UI/LevelUI.gd" id="11_0kjmh"]
 [ext_resource type="FontFile" uid="uid://ddfxp5wl0aiac" path="res://Assets/font/monogram.ttf" id="12_qngi5"]
+[ext_resource type="Script" uid="uid://m6e7qn473y1a" path="res://Scripts/StoryTelling/Dialogue.gd" id="13_20587"]
 [ext_resource type="PackedScene" uid="uid://ckucgsh1widvv" path="res://Scene/UI/CursorLayer.tscn" id="13_dcp87"]
+[ext_resource type="AudioStream" uid="uid://bq1xpuartmvye" path="res://Assets/Bip/Bip_Rafi_New.mp3" id="14_2jhke"]
 [ext_resource type="PackedScene" uid="uid://cyu1hv5nm6l0s" path="res://Scene/Visuals/PostProcess.tscn" id="14_3rwpp"]
 
 [sub_resource type="Animation" id="Animation_e7jyp"]
@@ -143,6 +145,17 @@ offset_bottom = 48.0
 theme_override_fonts/normal_font = ExtResource("12_qngi5")
 bbcode_enabled = true
 fit_content = true
+
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/LevelUI"]
+clip_contents = false
+offset_top = 149.0
+offset_right = 320.0
+offset_bottom = 181.0
+theme_override_fonts/normal_font = ExtResource("12_qngi5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_20587")
+voice_sound = ExtResource("14_2jhke")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

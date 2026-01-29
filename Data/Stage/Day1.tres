@@ -25,4 +25,5 @@ trash_goal = 1
 grid_content = Dictionary[Vector2i, ExtResource("1_4abfi")]({
 Vector2i(3, 1): SubResource("Resource_4waw1")
 })
+dialogue = Array[String](["Another cold slice of pepperoni pizza", "It doesn't feel the same anymore", "But I guess it keeps me alive|0.4|.|0.4|.|0.4|.", "Just what my sister wanted me to do"])
 metadata/_custom_type_script = "uid://byo78viqn3s5q"

@@ -113,4 +113,5 @@ Vector2i(5, 2): SubResource("Resource_igjub"),
 Vector2i(6, 3): SubResource("Resource_o8xbd"),
 Vector2i(6, 5): SubResource("Resource_uw2p2")
 })
+dialogue = Array[String](["My throat was really dry", "Huh", "I haven't seen this photo in a while", "It's me and her at her favorite park", ".|0.4|.|0.4|.|0.4|I can't look at her face right now", "I'll just put it in the drawer", "Oh", "The hospital bills. |0.5| I thought I had thrown these away", "I wish I could afford the surgery |0.8| before she died"])
 metadata/_custom_type_script = "uid://byo78viqn3s5q"
