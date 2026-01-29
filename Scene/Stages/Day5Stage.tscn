@@ -78,6 +78,7 @@ grid_system = NodePath("GridSystem")
 state_machine = NodePath("StateMachine")
 stage_data = ExtResource("2_wmg3m")
 path_ratio = 0.99
+go_back = true
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 320.0

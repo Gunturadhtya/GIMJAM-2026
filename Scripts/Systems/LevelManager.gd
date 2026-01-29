@@ -1,5 +1,7 @@
 class_name Day2 extends LevelManager
 
+@export var is_last_stage:bool
+
 func _ready() -> void:
 	Global.is_dialogue_active = false
 	Global.is_cutscene_active = false
@@ -40,7 +42,7 @@ func _handle_win():
 	set_process_input(false) 
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
-	get_tree().change_scene_to_file(stage_data.next_scene)
+	_on_level_completed()
 
 func _on_dialogue_ended():
 	_handle_win()
@@ -49,3 +51,12 @@ func _on_cutscene_ended():
 	Global.is_dialogue_active = true
 	await get_tree().create_timer(1.0).timeout
 	dialogue.start_sequence(stage_data.dialogue)
+
+func _on_level_completed():
+	if is_last_stage:
+		SaveManager.current_level_id = 1
+	else:
+		SaveManager.current_level_id += 1
+	
+	SaveManager.save_game()
+	get_tree().change_scene_to_file(stage_data.next_scene)

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 AudioManager="*res://Scripts/Singleton/AudioManager.gd"
 Global="*res://Scripts/Singleton/Global.gd"
+SaveManager="*res://Scripts/Systems/SaveManager.gd"
 
 [display]
 
