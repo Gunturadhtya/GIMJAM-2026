@@ -244,7 +244,7 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_e7jyp")
-start_scene_path = "uid://cya65lsp177sc"
+start_scene_path = "uid://dawsrkrgv1xvq"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
