@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bkkxgn7dpv6cg"]
+[gd_scene format=3 uid="uid://bkkxgn7dpv6cg"]
 
 [ext_resource type="Script" uid="uid://iv0wof6qcg8o" path="res://Scripts/StoryTelling/CutscenePath.gd" id="1_s214m"]
 [ext_resource type="Texture2D" uid="uid://d0mh34liiua4c" path="res://Assets/rafi/char_rafi-sheet.png" id="2_qonyh"]
@@ -372,13 +372,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CutscenePath" type="Path2D"]
+[node name="CutscenePath" type="Path2D" unique_id=853300781]
 curve = SubResource("Curve2D_xabwx")
 script = ExtResource("1_s214m")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=511797479]
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="PathFollow2D" unique_id=575628692]
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_bnuar")
 animation = &"scene_day5"

@@ -28,8 +28,6 @@ func run_sequence(astar_points: Array[Vector2], stop_ratio: float, do_return: bo
 			sprite.position = Vector2(-0.0, 7.0)
 			sprite.play("scene_day1")
 			await sprite.animation_finished
-		2:
-			sprite.rotation_degrees = -180
 			
 		3:
 			sprite.rotation_degrees = 90

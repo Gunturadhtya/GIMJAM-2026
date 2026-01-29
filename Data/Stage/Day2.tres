@@ -117,5 +117,5 @@ Vector2i(4, 5): SubResource("Resource_jtggg"),
 Vector2i(5, 1): SubResource("Resource_cvjru"),
 Vector2i(6, 0): SubResource("Resource_pp1qs")
 })
-dialogue = Array[String](["Huh… |0.4| it’s just an ad from the company I worked for", "I thought they were going to kick me out from this house", "Yeah, I don't even care about finding jobs anymore", "Even when I worked myself to death,|0.6| I couldn't save her life"])
+dialogue = Array[String](["Huh... |0.4| it's just an ad from the company I worked for", "I thought they were going to kick me out from this house", "Yeah, I don't even care about finding jobs anymore", "Even when I worked myself to death,|0.6| I couldn't save her life"])
 metadata/_custom_type_script = "uid://byo78viqn3s5q"
